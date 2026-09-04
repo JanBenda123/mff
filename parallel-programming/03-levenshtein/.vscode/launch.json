@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Levenshtein (make)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/framework/levenshtein",
+            "args": [
+                "-debug",
+                "file1.txt",
+                "file2.txt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/framework",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Catch all exceptions",
+                    "text": "catch throw",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build-framework"
+        }
+    ]
+}

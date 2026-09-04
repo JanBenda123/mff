@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MultiFileFormatter": {
+      "commandName": "Project",
+      "commandLineArgs": "--highlight-spaces plain1.txt plain2.txt plain3.txt out.txt 10"
+    }
+  }
+}

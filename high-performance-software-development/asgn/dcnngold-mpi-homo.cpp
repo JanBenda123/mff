@@ -1,0 +1,191 @@
+#include "fmwkng.hpp"
+#include "dcnnasgn.hpp"
+
+namespace dcnnmain {
+    static fmwkng::gold_pair gr_1()
+    {
+        fmwkng::gold_pair rv;
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<fmwkng::impl::root_tag<dcnnmain::root_config>,fmwkng::impl::element_sense::OPEN>>("mpi-homo"));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<fmwkng::impl::version_tag,fmwkng::impl::element_sense::OPEN>>(std::monostate()));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<fmwkng::all_platforms_tag,fmwkng::impl::element_sense::OPEN>>(std::monostate()));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::minibatch,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(16,16,5)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::total,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(2048,2048,2)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::superbatch,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(8,8,2)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<fmwkng::all_threads_tag,fmwkng::impl::element_sense::OPEN>>(std::monostate()));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-215.761,128)));
+        return rv;
+    }
+    static fmwkng::impl::element_list gp_1()
+    {
+        fmwkng::impl::element_list rv;
+        rv.push_back(std::make_unique<fmwkng::impl::element_t<fmwkng::impl::root_tag<dcnnmain::root_config>,fmwkng::impl::element_sense::OPEN>>("mpi-homo"));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<fmwkng::all_platforms_tag,fmwkng::impl::element_sense::OPEN>>(std::monostate()));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::minibatch,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(16,16,5)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::total,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(2048,2048,2)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::superbatch,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(8,8,2)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<fmwkng::all_threads_tag,fmwkng::impl::element_sense::OPEN>>(std::monostate()));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-215.761,128)));
+        return rv;
+    }
+    static fmwkng::impl::element_list gp_1_1()
+    {
+        fmwkng::impl::element_list rv = gp_1();
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<dcnnmain::platform_avx512,fmwkng::impl::element_sense::OPEN>>(std::monostate{}));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::minibatch,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(16,16,5)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::total,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(2048,2048,2)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::superbatch,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(8,8,2)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<fmwkng::all_threads_tag,fmwkng::impl::element_sense::OPEN>>(std::monostate()));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-215.761,128)));
+        return rv;
+    }
+    static fmwkng::impl::element_list gp_1_1_1()
+    {
+        fmwkng::impl::element_list rv = gp_1_1();
+        rv.push_back(std::make_unique<fmwkng::impl::element_t<dcnnmain::platform_avx512,fmwkng::impl::element_sense::OPEN>>(std::monostate{}));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<dcnnmain::minibatch,fmwkng::impl::element_sense::OPEN>>(std::make_pair(16,fmwkng::logarithmic(16,16,5))));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::total,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(2048,2048,2)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::superbatch,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(8,8,2)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<fmwkng::all_threads_tag,fmwkng::impl::element_sense::OPEN>>(std::monostate()));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-215.761,128)));
+        return rv;
+    }
+    static fmwkng::impl::element_list gp_1_1_1_1()
+    {
+        fmwkng::impl::element_list rv = gp_1_1_1();
+        rv.push_back(std::make_unique<fmwkng::impl::element_t<dcnnmain::minibatch,fmwkng::impl::element_sense::OPEN>>(std::make_pair(16,fmwkng::logarithmic(16,16,5))));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1_1()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<dcnnmain::total,fmwkng::impl::element_sense::OPEN>>(std::make_pair(2048,fmwkng::logarithmic(2048,2048,2))));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<dcnnmain::superbatch,fmwkng::impl::element_sense::OPEN>>(fmwkng::logarithmic(8,8,2)));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<fmwkng::all_threads_tag,fmwkng::impl::element_sense::OPEN>>(std::monostate()));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-215.761,128)));
+        return rv;
+    }
+    static fmwkng::impl::element_list gp_1_1_1_1_1()
+    {
+        fmwkng::impl::element_list rv = gp_1_1_1_1();
+        rv.push_back(std::make_unique<fmwkng::impl::element_t<dcnnmain::total,fmwkng::impl::element_sense::OPEN>>(std::make_pair(2048,fmwkng::logarithmic(2048,2048,2))));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1_1_1()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<dcnnmain::superbatch,fmwkng::impl::element_sense::OPEN>>(std::make_pair(8,fmwkng::logarithmic(8,8,2))));
+        rv.key.push_back(std::make_unique<fmwkng::impl::config_element<fmwkng::all_threads_tag,fmwkng::impl::element_sense::OPEN>>(std::monostate()));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-215.761,128)));
+        return rv;
+    }
+    static fmwkng::impl::element_list gp_1_1_1_1_1_1()
+    {
+        fmwkng::impl::element_list rv = gp_1_1_1_1_1();
+        rv.push_back(std::make_unique<fmwkng::impl::element_t<dcnnmain::superbatch,fmwkng::impl::element_sense::OPEN>>(std::make_pair(8,fmwkng::logarithmic(8,8,2))));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1_1_1_1()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<fmwkng::impl::parallel_tag,fmwkng::impl::element_sense::OPEN>>(0));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-26.8375,16)));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1_1_1_2()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<fmwkng::impl::parallel_tag,fmwkng::impl::element_sense::OPEN>>(1));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-26.946,16)));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1_1_1_3()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<fmwkng::impl::parallel_tag,fmwkng::impl::element_sense::OPEN>>(2));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-26.9662,16)));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1_1_1_4()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<fmwkng::impl::parallel_tag,fmwkng::impl::element_sense::OPEN>>(3));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-27.0032,16)));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1_1_1_5()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<fmwkng::impl::parallel_tag,fmwkng::impl::element_sense::OPEN>>(4));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-26.9957,16)));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1_1_1_6()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<fmwkng::impl::parallel_tag,fmwkng::impl::element_sense::OPEN>>(5));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-26.985,16)));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1_1_1_7()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<fmwkng::impl::parallel_tag,fmwkng::impl::element_sense::OPEN>>(6));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-26.9596,16)));
+        return rv;
+    }
+    static fmwkng::gold_pair gr_1_1_1_1_1_1_8()
+    {
+        fmwkng::gold_pair rv;
+        rv.key = gp_1_1_1_1_1_1();
+        rv.key.push_back(std::make_unique<fmwkng::impl::element_t<fmwkng::impl::parallel_tag,fmwkng::impl::element_sense::OPEN>>(7));
+        rv.value.push_back(std::make_unique<fmwkng::impl::result_element<fmwkng::impl::measurement_tag<dcnnmain::time>,fmwkng::impl::element_sense::CLOSE>>(std::make_pair(-27.0677,16)));
+        return rv;
+    }
+    static fmwkng::gold_data gold_results_()
+    {
+        fmwkng::gold_data rv;
+        rv.insert(gr_1_1_1_1_1_1_1());
+        rv.insert(gr_1_1_1_1_1_1_2());
+        rv.insert(gr_1_1_1_1_1_1_3());
+        rv.insert(gr_1_1_1_1_1_1_4());
+        rv.insert(gr_1_1_1_1_1_1_5());
+        rv.insert(gr_1_1_1_1_1_1_6());
+        rv.insert(gr_1_1_1_1_1_1_7());
+        rv.insert(gr_1_1_1_1_1_1_8());
+        rv.insert(gr_1_1_1_1_1_1());
+        rv.insert(gr_1_1_1_1_1());
+        rv.insert(gr_1_1_1_1());
+        rv.insert(gr_1_1_1());
+        rv.insert(gr_1_1());
+        rv.insert(gr_1());
+        return rv;
+    }
+    static fmwkng::gold_holder gh_(gold_master(), gold_results_);
+}

@@ -1,0 +1,40 @@
+A report for second assignment for AdvPara
+In final version I have used unified memory
+
+NOTE: I will not be responding much during the first week. 
+I'll try to implement your suggestion the next week ASAP. 
+
++----------------------------------------------+-------------+------------+------------+
+|              alg name & params               | Preparation | Execution  |   Total    |
++----------------------------------------------+-------------+------------+------------+
+| serial                                       | 0.0002 ms   | 1734.45 ms | 1734.45 ms |
+| naive(bs=256 fixed)                          | 440.54 ms   | 136680 ms  | 137120 ms  |
+| atomic(bs=512)                               | 444.72 ms   | 749.11 ms  | 1193 ms    |
+| atomic_shm(bs=512, pc=8, ipt=32)             | 455.63 ms   | 7.19 ms    | 462.82 ms  |
+| atomic_shm(bs=256, pc=1, ipt=16)             | 443.51 ms   | 8.06 ms    | 451.57 ms  |
+| overlap(bs=512, pc=8, ipt=32, cs=1G)         | 0.0002 ms   | 451.98 ms  | 451.98 ms  |
+| overlap(bs=512, pc=8, ipt=32, cs=1G, pinned) | 0.0003 ms   | 180.57 ms  | 180.57 ms  |
+| final(bs=512, pc=8, ipt=32)                  | 720.36 ms   | 7.66 ms    | 728.02 ms  |
++----------------------------------------------+-------------+------------+------------+
+
+abbreviations
+    bs = blockSIze
+    pc = privateCopies
+    ipt = itemsPerThread
+    cs = chunkSize
+
+My comments and possible signs of not optimal implementation
+ - naive      - I know that naive solution is supposed to be bad. But I did not expect it to 
+                be almost 10 times as bad. Is it correct?
+
+ - atomic_shm - It surprised me when no privatization was as good as mild privatization 
+                (still not all 32 banks per bin used). That is because of the reduction step (last for loop)
+                which may not be optimal, but I did not find any better way of doing this. Can I do better?
+
+ - overlap    - Overlapping did not bring any benefit to it. The bigger the chunck size, the faster it run. 
+                In my opinion it's cause the copying takes ~50 times as long as the kernel computation. 
+
+ - final      - I've experimented with cudaMemAdvise a bit. The version I chose is primarily the fastest
+                and secondarly which made the most sense. (Some flags did not make a difference but they 
+                felt sensible to include).
+

@@ -1,0 +1,346 @@
+atomic_shm 32k
+Private copies: 8, ItemsPerThread: 32, BlockSize 512
+Execution ... 6.88186 ms
+Verifying results ... OK
+
+Private copies: 1, ItemsPerThread: 16, BlockSize 256
+Execution ... 6.40101 ms
+Verifying results ... OK
+
+podobné nejlepší časy jsem dostal i pokud jsem odstranil redukční fázi atomic_shm
+
+
+
+
+
+ChunkSize: 1k
+Preparations ... 0.000285 ms
+Execution ... 30516.4 ms
+Verifying results ... OK
+
+Preparations ... 0.000318 ms
+Execution ... 23944.4 ms
+Verifying results ... OK
+
+ChunkSize: 1k, Pinned
+Preparations ... 0.000366 ms
+Execution ... 36166.7 ms
+Verifying results ... OK
+
+Preparations ... 0.000336 ms
+Execution ... 30536.8 ms
+Verifying results ... OK
+
+ChunkSize: 8k
+Preparations ... 0.000322 ms
+Execution ... 4162.72 ms
+Verifying results ... OK
+
+Preparations ... 0.000348 ms
+Execution ... 3375.36 ms
+Verifying results ... OK
+
+ChunkSize: 8k, Pinned
+Preparations ... 0.000338 ms
+Execution ... 5192.65 ms
+Verifying results ... OK
+
+Preparations ... 0.000283 ms
+Execution ... 4898.2 ms
+Verifying results ... OK
+
+ChunkSize: 64k
+Preparations ... 0.000308 ms
+Execution ... 709.568 ms
+Verifying results ... OK
+
+Preparations ... 0.000323 ms
+Execution ... 600.725 ms
+Verifying results ... OK
+
+ChunkSize: 64k, Pinned
+Preparations ... 0.000357 ms
+Execution ... 1307.28 ms
+Verifying results ... OK
+
+Preparations ... 0.000359 ms
+Execution ... 1551.06 ms
+Verifying results ... OK
+
+ChunkSize: 512k
+Preparations ... 0.00026 ms
+Execution ... 459.037 ms
+Verifying results ... OK
+
+Preparations ... 0.000283 ms
+Execution ... 458.103 ms
+Verifying results ... OK
+
+ChunkSize: 512k, Pinned
+Preparations ... 0.000328 ms
+Execution ... 818.313 ms
+Verifying results ... OK
+
+Preparations ... 0.000331 ms
+Execution ... 1344.66 ms
+Verifying results ... OK
+
+ChunkSize: 524288
+Preparations ... 0.000267 ms
+Execution ... 458.202 ms
+Verifying results ... OK
+
+Preparations ... 0.000321 ms
+Execution ... 459.872 ms
+Verifying results ... OK
+
+ChunkSize: 524288, Pinned
+Preparations ... 0.000317 ms
+Execution ... 809.463 ms
+Verifying results ... OK
+
+Preparations ... 0.000297 ms
+Execution ... 1346.63 ms
+Verifying results ... OK
+
+ChunkSize: 4194304
+Preparations ... 0.000328 ms
+Execution ... 447.939 ms
+Verifying results ... OK
+
+Preparations ... 0.000324 ms
+Execution ... 447.557 ms
+Verifying results ... OK
+
+ChunkSize: 4194304, Pinned
+Preparations ... 0.000347 ms
+Execution ... 780.282 ms
+Verifying results ... OK
+
+Preparations ... 0.000293 ms
+Execution ... 1269.85 ms
+Verifying results ... OK
+
+ChunkSize: 33554432
+Preparations ... 0.000284 ms
+Execution ... 443.733 ms
+Verifying results ... OK
+
+Preparations ... 0.000336 ms
+Execution ... 444.181 ms
+Verifying results ... OK
+
+ChunkSize: 33554432, Pinned
+Preparations ... 0.000348 ms
+Execution ... 730.027 ms
+Verifying results ... OK
+
+Preparations ... 0.000596 ms
+Execution ... 1156.34 ms
+Verifying results ... OK
+
+ChunkSize: 268435456
+Preparations ... 0.000381 ms
+Execution ... 448.883 ms
+Verifying results ... OK
+
+Preparations ... 0.000279 ms
+Execution ... 447.443 ms
+Verifying results ... OK
+
+ChunkSize: 268435456, Pinned
+Preparations ... 0.00038 ms
+Execution ... 723.395 ms
+Verifying results ... OK
+
+Preparations ... 0.000336 ms
+Execution ... 1162.71 ms
+Verifying results ... OK
+
+ChunkSize: 1073741824
+Preparations ... 0.000259 ms
+Execution ... 449.032 ms
+Verifying results ... OK
+
+Preparations ... 0.000277 ms
+Execution ... 450.017 ms
+Verifying results ... OK
+
+ChunkSize: 1073741824, Pinned
+Preparations ... 0.000325 ms
+Execution ... 727.403 ms
+Verifying results ... OK
+
+Preparations ... 0.000316 ms
+Execution ... 1154.95 ms
+Verifying results ... OK
+
+
+
+
+
+
+
+Correct pinned
+
+ChunkSize: 1k
+Preparations ... 0.000331 ms
+Execution ... 30533.1 ms
+Verifying results ... OK
+
+Preparations ... 0.000277 ms
+Execution ... 24119.1 ms
+Verifying results ... OK
+
+ChunkSize: 1k, Pinned
+Preparations ... 0.000363 ms
+Execution ... 31893.8 ms
+Verifying results ... OK
+
+Preparations ... 0.000353 ms
+Execution ... 31620.9 ms
+Verifying results ... OK
+
+ChunkSize: 8k
+Preparations ... 0.000319 ms
+Execution ... 4173.1 ms
+Verifying results ... OK
+
+Preparations ... 0.000324 ms
+Execution ... 3440.69 ms
+Verifying results ... OK
+
+ChunkSize: 8k, Pinned
+Preparations ... 0.000345 ms
+Execution ... 4540.41 ms
+Verifying results ... OK
+
+Preparations ... 0.000387 ms
+Execution ... 3933.13 ms
+Verifying results ... OK
+
+ChunkSize: 64k
+Preparations ... 0.000285 ms
+Execution ... 755.368 ms
+Verifying results ... OK
+
+Preparations ... 0.000338 ms
+Execution ... 600.553 ms
+Verifying results ... OK
+
+ChunkSize: 64k, Pinned
+Preparations ... 0.000349 ms
+Execution ... 942.172 ms
+Verifying results ... OK
+
+Preparations ... 0.000352 ms
+Execution ... 556.955 ms
+Verifying results ... OK
+
+ChunkSize: 512k
+Preparations ... 0.00029 ms
+Execution ... 460.566 ms
+Verifying results ... OK
+
+Preparations ... 0.000283 ms
+Execution ... 457.226 ms
+Verifying results ... OK
+
+ChunkSize: 512k, Pinned
+Preparations ... 0.000354 ms
+Execution ... 250.084 ms
+Verifying results ... OK
+
+Preparations ... 0.000462 ms
+Execution ... 233.151 ms
+Verifying results ... OK
+
+ChunkSize: 524288
+Preparations ... 0.000333 ms
+Execution ... 457.9 ms
+Verifying results ... OK
+
+Preparations ... 0.000435 ms
+Execution ... 458.564 ms
+Verifying results ... OK
+
+ChunkSize: 524288, Pinned
+Preparations ... 0.000365 ms
+Execution ... 247.504 ms
+Verifying results ... OK
+
+Preparations ... 0.000552 ms
+Execution ... 232.511 ms
+Verifying results ... OK
+
+ChunkSize: 4194304
+Preparations ... 0.000287 ms
+Execution ... 448.922 ms
+Verifying results ... OK
+
+Preparations ... 0.00033 ms
+Execution ... 447.703 ms
+Verifying results ... OK
+
+ChunkSize: 4194304, Pinned
+Preparations ... 0.00032 ms
+Execution ... 190.646 ms
+Verifying results ... OK
+
+Preparations ... 0.000358 ms
+Execution ... 187.837 ms
+Verifying results ... OK
+
+ChunkSize: 33554432
+Preparations ... 0.000274 ms
+Execution ... 443.748 ms
+Verifying results ... OK
+
+Preparations ... 0.00025 ms
+Execution ... 443.807 ms
+Verifying results ... OK
+
+ChunkSize: 33554432, Pinned
+Preparations ... 0.000365 ms
+Execution ... 181.327 ms
+Verifying results ... OK
+
+Preparations ... 0.000345 ms
+Execution ... 180.683 ms
+Verifying results ... OK
+
+ChunkSize: 268435456
+Preparations ... 0.000284 ms
+Execution ... 447.878 ms
+Verifying results ... OK
+
+Preparations ... 0.000267 ms
+Execution ... 447.646 ms
+Verifying results ... OK
+
+ChunkSize: 268435456, Pinned
+Preparations ... 0.000347 ms
+Execution ... 180.056 ms
+Verifying results ... OK
+
+Preparations ... 0.000349 ms
+Execution ... 180.42 ms
+Verifying results ... OK
+
+ChunkSize: 1073741824
+Preparations ... 0.000349 ms
+Execution ... 450.441 ms
+Verifying results ... OK
+
+Preparations ... 0.000317 ms
+Execution ... 449.112 ms
+Verifying results ... OK
+
+ChunkSize: 1073741824, Pinned
+Preparations ... 0.000372 ms
+Execution ... 179.908 ms
+Verifying results ... OK
+
+Preparations ... 0.000324 ms
+Execution ... 179.398 ms
+Verifying results ... OK

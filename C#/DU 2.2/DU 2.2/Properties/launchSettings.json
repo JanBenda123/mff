@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DU 2.2": {
+      "commandName": "Project",
+      "commandLineArgs": "test.txt plain.txt col2"
+    }
+  }
+}

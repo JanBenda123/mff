@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DU1.1": {
+      "commandName": "Project",
+      "commandLineArgs": "test.txt"
+    }
+  }
+}

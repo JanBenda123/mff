@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service LabActivity {
+  rpc StartHere(StartHereRequest) returns (StartHereResponse) {}
+}
+
+message StartHereRequest {
+  // Your SIS username derived from your name, e.g., lastnamef.
+  string sis_login = 1;
+}
+
+message StartHereResponse {
+  // The instructions for the next task.
+  string instructions = 1;
+}

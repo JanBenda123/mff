@@ -1,0 +1,13 @@
+alg name & params	Preparation	Execution	Total
+
+serial	0.0002 ms	1734.45 ms	1734.45 ms
+maive(bs= 256 fixed)	440.543 ms	136680 ms	137120 ms 
+atomic(bs=512)	444.729 ms	749.113 ms	1193 ms
+atomic_shm(bs=512, pc=8, ipt=32)	455.63 ms	7.19 ms	462.82 ms
+atomic_shm(bs=256, pc=1, ipt=16)	443.51 ms	8.06 ms	451.57 ms 
+overlap(bs=512, pc=8, ipt=32, cs=1G)	0.0002 ms	451.98 ms	451.98 ms
+overlap(bs=512, pc=8, ipt=32, cs=1G, pinned)	 0.0003 ms	180.57 ms	180.57 ms
+final(bs=512, pc=8, ipt=32)	720.36 ms	7.66 ms	728.02 ms	
+
+overlap - the bigger the chunk the better.
+final -played with memadv -similar - picked one tha made most sense

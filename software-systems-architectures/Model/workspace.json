@@ -1,0 +1,3465 @@
+{
+  "configuration" : { },
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2024-11-26T12:00:34Z",
+  "model" : {
+    "deploymentNodes" : [ {
+      "containerInstances" : [ {
+        "containerId" : "26",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "Live",
+        "id" : "125",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "user_html_instance"
+        },
+        "relationships" : [ {
+          "description" : "Requests information and changes about exam terms",
+          "destinationId" : "128",
+          "id" : "129",
+          "linkedRelationshipId" : "46",
+          "sourceId" : "125"
+        }, {
+          "description" : "Requests information and changes about exam results",
+          "destinationId" : "130",
+          "id" : "131",
+          "linkedRelationshipId" : "47",
+          "sourceId" : "125"
+        }, {
+          "description" : "Requests statistics about exam results",
+          "destinationId" : "133",
+          "id" : "134",
+          "linkedRelationshipId" : "49",
+          "sourceId" : "125"
+        } ],
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "Live",
+      "id" : "124",
+      "instances" : "1",
+      "name" : "User's web browser",
+      "properties" : {
+        "structurizr.dsl.identifier" : "2e98ba65-1d15-41f7-9025-c55f4da52482"
+      },
+      "tags" : "Element,Deployment Node"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "2",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "128",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_app_instance"
+          },
+          "relationships" : [ {
+            "description" : "Queries about required credits",
+            "destinationId" : "130",
+            "id" : "132",
+            "linkedRelationshipId" : "103",
+            "sourceId" : "128"
+          }, {
+            "description" : "Reads and writes exam terms",
+            "destinationId" : "139",
+            "id" : "140",
+            "linkedRelationshipId" : "53",
+            "sourceId" : "128"
+          } ],
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "8",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "130",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "result_app_instance"
+          },
+          "relationships" : [ {
+            "description" : "Reads and writes exam results",
+            "destinationId" : "144",
+            "id" : "145",
+            "linkedRelationshipId" : "61",
+            "sourceId" : "130"
+          } ],
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "14",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "133",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "stats_app_instance"
+          },
+          "relationships" : [ {
+            "description" : "Accesses statistical data",
+            "destinationId" : "141",
+            "id" : "143",
+            "linkedRelationshipId" : "45",
+            "sourceId" : "133"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "127",
+        "instances" : "1",
+        "name" : "Web server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "64b0c516-51d1-4caa-8d73-f74be902c839"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Apache Tomcat 10.1.15"
+      } ],
+      "environment" : "Live",
+      "id" : "126",
+      "instances" : "1",
+      "name" : "Application Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "9a517eeb-a8a3-498a-a2f7-645a6e810613"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Ubuntu 18.04 LTS"
+    }, {
+      "containerInstances" : [ {
+        "containerId" : "18",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "Live",
+        "id" : "136",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "aggregator_app_instance"
+        },
+        "relationships" : [ {
+          "description" : "Writes aggregated statistics",
+          "destinationId" : "141",
+          "id" : "142",
+          "linkedRelationshipId" : "70",
+          "sourceId" : "136"
+        }, {
+          "description" : "Reads historic results",
+          "destinationId" : "144",
+          "id" : "146",
+          "linkedRelationshipId" : "67",
+          "sourceId" : "136"
+        } ],
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "Live",
+      "id" : "135",
+      "instances" : "1",
+      "name" : "Agregator Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "d9c30634-f104-4186-935c-21095d0c745b"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Ubuntu 18.04 LTS"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "23",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "139",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_db_instance"
+          },
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "25",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "141",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "stats_db_instance"
+          },
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "24",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "144",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "results_db_instance"
+          },
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "138",
+        "instances" : "1",
+        "name" : "Relational DB server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "1af38ee7-30f6-40e6-9580-89640ac8a291"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Oracle 19.1.0"
+      } ],
+      "environment" : "Live",
+      "id" : "137",
+      "instances" : "1",
+      "name" : "Database Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ae940c5f-bc7d-4ce5-b5af-11b13e68b94e"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Ubuntu 18.04 LTS"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "27",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "150",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "selenium_test_instance"
+          },
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "30",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "152",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "apache_jmeter_test_instance"
+          },
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Tests",
+        "id" : "149",
+        "instances" : "1",
+        "name" : "Nav. Flow & UI Elements Tests",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dd216a6e-8057-40a5-b28b-2c35350e57d8"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Selenium WebDriver"
+      } ],
+      "containerInstances" : [ {
+        "containerId" : "26",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "Tests",
+        "id" : "148",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "test_user_html_instance"
+        },
+        "relationships" : [ {
+          "description" : "Tests UI",
+          "destinationId" : "150",
+          "id" : "151",
+          "linkedRelationshipId" : "106",
+          "sourceId" : "148"
+        }, {
+          "description" : "Load testing",
+          "destinationId" : "152",
+          "id" : "153",
+          "linkedRelationshipId" : "107",
+          "sourceId" : "148"
+        }, {
+          "description" : "Requests information and changes about exam terms",
+          "destinationId" : "156",
+          "id" : "157",
+          "linkedRelationshipId" : "46",
+          "sourceId" : "148"
+        }, {
+          "description" : "Requests information and changes about exam results",
+          "destinationId" : "158",
+          "id" : "159",
+          "linkedRelationshipId" : "47",
+          "sourceId" : "148"
+        }, {
+          "description" : "Requests statistics about exam results",
+          "destinationId" : "161",
+          "id" : "162",
+          "linkedRelationshipId" : "49",
+          "sourceId" : "148"
+        } ],
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "Tests",
+      "id" : "147",
+      "instances" : "1",
+      "name" : "User's web browser",
+      "properties" : {
+        "structurizr.dsl.identifier" : "2fae8b75-40b5-460c-bfb2-ba6d8d56fa03"
+      },
+      "tags" : "Element,Deployment Node"
+    }, {
+      "children" : [ {
+        "children" : [ {
+          "containerInstances" : [ {
+            "containerId" : "28",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Tests",
+            "id" : "164",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "webserver_junit_manager_test_instance"
+            },
+            "tags" : "Container Instance"
+          } ],
+          "description" : "JUnit",
+          "environment" : "Tests",
+          "id" : "163",
+          "instances" : "1",
+          "name" : "Manager Unit tests",
+          "properties" : {
+            "structurizr.dsl.identifier" : "97d05f23-8730-4b58-a412-88643ed0ec78"
+          },
+          "tags" : "Element,Deployment Node"
+        } ],
+        "containerInstances" : [ {
+          "containerId" : "2",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "156",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "test_term_app_instance"
+          },
+          "relationships" : [ {
+            "description" : "Queries about required credits",
+            "destinationId" : "158",
+            "id" : "160",
+            "linkedRelationshipId" : "103",
+            "sourceId" : "156"
+          }, {
+            "description" : "Unit tests for Java",
+            "destinationId" : "164",
+            "id" : "165",
+            "linkedRelationshipId" : "108",
+            "sourceId" : "156"
+          }, {
+            "description" : "Reads and writes exam terms",
+            "destinationId" : "175",
+            "id" : "176",
+            "linkedRelationshipId" : "53",
+            "sourceId" : "156"
+          } ],
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "8",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "158",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "test_result_app_instance"
+          },
+          "relationships" : [ {
+            "description" : "Unit tests for Java",
+            "destinationId" : "164",
+            "id" : "167",
+            "linkedRelationshipId" : "109",
+            "sourceId" : "158"
+          }, {
+            "description" : "Reads and writes exam results",
+            "destinationId" : "180",
+            "id" : "181",
+            "linkedRelationshipId" : "61",
+            "sourceId" : "158"
+          } ],
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "14",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "161",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "test_stats_app_instance"
+          },
+          "relationships" : [ {
+            "description" : "Unit tests for Java",
+            "destinationId" : "164",
+            "id" : "166",
+            "linkedRelationshipId" : "110",
+            "sourceId" : "161"
+          }, {
+            "description" : "Accesses statistical data",
+            "destinationId" : "177",
+            "id" : "178",
+            "linkedRelationshipId" : "45",
+            "sourceId" : "161"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Tests",
+        "id" : "155",
+        "instances" : "1",
+        "name" : "Web server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "255b823e-c5f0-46ae-bab1-be83c81bf028"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Apache Tomcat 10.1.15"
+      } ],
+      "environment" : "Tests",
+      "id" : "154",
+      "instances" : "1",
+      "name" : "Application Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "c88ea90c-46a1-4ad6-a0fd-e27e2d2001a9"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Ubuntu 18.04 LTS"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "29",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "171",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "webserver_junit_manager_test_instance_agregator"
+          },
+          "tags" : "Container Instance"
+        } ],
+        "description" : "JUnit",
+        "environment" : "Tests",
+        "id" : "170",
+        "instances" : "1",
+        "name" : "Aggregator Unit tests",
+        "properties" : {
+          "structurizr.dsl.identifier" : "d4617f0a-3585-4062-932c-5a83dbec0899"
+        },
+        "tags" : "Element,Deployment Node"
+      } ],
+      "containerInstances" : [ {
+        "containerId" : "18",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "Tests",
+        "id" : "169",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "test_aggregator_app_instance"
+        },
+        "relationships" : [ {
+          "description" : "Unit tests for Java",
+          "destinationId" : "171",
+          "id" : "172",
+          "linkedRelationshipId" : "111",
+          "sourceId" : "169"
+        }, {
+          "description" : "Writes aggregated statistics",
+          "destinationId" : "177",
+          "id" : "179",
+          "linkedRelationshipId" : "70",
+          "sourceId" : "169"
+        }, {
+          "description" : "Reads historic results",
+          "destinationId" : "180",
+          "id" : "182",
+          "linkedRelationshipId" : "67",
+          "sourceId" : "169"
+        } ],
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "Tests",
+      "id" : "168",
+      "instances" : "1",
+      "name" : "Agregator Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "968d592c-c200-4a12-90ba-db6905b28370"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Ubuntu 18.04 LTS"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "23",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "175",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "test_term_db_instance"
+          },
+          "relationships" : [ {
+            "description" : "Performance testing",
+            "destinationId" : "184",
+            "id" : "185",
+            "linkedRelationshipId" : "112",
+            "sourceId" : "175"
+          }, {
+            "description" : "Security testing",
+            "destinationId" : "188",
+            "id" : "189",
+            "linkedRelationshipId" : "115",
+            "sourceId" : "175"
+          }, {
+            "description" : "Backup testing",
+            "destinationId" : "192",
+            "id" : "193",
+            "linkedRelationshipId" : "118",
+            "sourceId" : "175"
+          }, {
+            "description" : "functional testing",
+            "destinationId" : "196",
+            "id" : "197",
+            "linkedRelationshipId" : "121",
+            "sourceId" : "175"
+          } ],
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "25",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "177",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "test_stats_db_instance"
+          },
+          "relationships" : [ {
+            "description" : "Performance testing",
+            "destinationId" : "184",
+            "id" : "186",
+            "linkedRelationshipId" : "113",
+            "sourceId" : "177"
+          }, {
+            "description" : "Security testing",
+            "destinationId" : "188",
+            "id" : "190",
+            "linkedRelationshipId" : "116",
+            "sourceId" : "177"
+          }, {
+            "description" : "Backup testing",
+            "destinationId" : "192",
+            "id" : "194",
+            "linkedRelationshipId" : "119",
+            "sourceId" : "177"
+          }, {
+            "description" : "functional testing",
+            "destinationId" : "196",
+            "id" : "198",
+            "linkedRelationshipId" : "122",
+            "sourceId" : "177"
+          } ],
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "24",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "180",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "test_results_db_instance"
+          },
+          "relationships" : [ {
+            "description" : "Performance testing",
+            "destinationId" : "184",
+            "id" : "187",
+            "linkedRelationshipId" : "114",
+            "sourceId" : "180"
+          }, {
+            "description" : "Security testing",
+            "destinationId" : "188",
+            "id" : "191",
+            "linkedRelationshipId" : "117",
+            "sourceId" : "180"
+          }, {
+            "description" : "Backup testing",
+            "destinationId" : "192",
+            "id" : "195",
+            "linkedRelationshipId" : "120",
+            "sourceId" : "180"
+          }, {
+            "description" : "functional testing",
+            "destinationId" : "196",
+            "id" : "199",
+            "linkedRelationshipId" : "123",
+            "sourceId" : "180"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Tests",
+        "id" : "174",
+        "instances" : "1",
+        "name" : "Relational DB server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "d9dfa662-2184-453a-80e5-4fc23fc5c321"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Oracle 19.1.0"
+      }, {
+        "containerInstances" : [ {
+          "containerId" : "32",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "184",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "oem_test_instance"
+          },
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "33",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "188",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "osd_test_instance"
+          },
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "34",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "192",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "orm_test_instance"
+          },
+          "tags" : "Container Instance"
+        }, {
+          "containerId" : "31",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Tests",
+          "id" : "196",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "toad_test_instance"
+          },
+          "tags" : "Container Instance"
+        } ],
+        "description" : "Oracle & Toad",
+        "environment" : "Tests",
+        "id" : "183",
+        "instances" : "1",
+        "name" : "Database Tests",
+        "properties" : {
+          "structurizr.dsl.identifier" : "829cb711-7d34-4c65-adb9-9468a093c1e8"
+        },
+        "tags" : "Element,Deployment Node"
+      } ],
+      "environment" : "Tests",
+      "id" : "173",
+      "instances" : "1",
+      "name" : "Database Server",
+      "properties" : {
+        "structurizr.dsl.identifier" : "5f2f858f-4d02-4146-a03b-106c21597d8c"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Ubuntu 18.04 LTS"
+    } ],
+    "people" : [ {
+      "id" : "81",
+      "location" : "Unspecified",
+      "name" : "Manager",
+      "properties" : {
+        "structurizr.dsl.identifier" : "manager"
+      },
+      "relationships" : [ {
+        "description" : "Reads about teacher performance",
+        "destinationId" : "26",
+        "id" : "84",
+        "sourceId" : "81",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Reads about teacher performance",
+        "destinationId" : "1",
+        "id" : "85",
+        "linkedRelationshipId" : "84",
+        "sourceId" : "81"
+      }, {
+        "description" : "Runs tasks",
+        "destinationId" : "19",
+        "id" : "90",
+        "sourceId" : "81",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Runs tasks",
+        "destinationId" : "18",
+        "id" : "91",
+        "linkedRelationshipId" : "90",
+        "sourceId" : "81"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "id" : "82",
+      "location" : "Unspecified",
+      "name" : "Student",
+      "properties" : {
+        "structurizr.dsl.identifier" : "student"
+      },
+      "relationships" : [ {
+        "description" : "Registers to exam terms and views exam results",
+        "destinationId" : "26",
+        "id" : "86",
+        "sourceId" : "82",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Registers to exam terms and views exam results",
+        "destinationId" : "1",
+        "id" : "87",
+        "linkedRelationshipId" : "86",
+        "sourceId" : "82"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "id" : "83",
+      "location" : "Unspecified",
+      "name" : "Teacher",
+      "properties" : {
+        "structurizr.dsl.identifier" : "teacher"
+      },
+      "relationships" : [ {
+        "description" : "Makes exam terms and sets exam results",
+        "destinationId" : "26",
+        "id" : "88",
+        "sourceId" : "83",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Makes exam terms and sets exam results",
+        "destinationId" : "1",
+        "id" : "89",
+        "linkedRelationshipId" : "88",
+        "sourceId" : "83"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "components" : [ {
+          "description" : "Translates API requests to business logic calls.",
+          "documentation" : { },
+          "group" : "API Layer",
+          "id" : "3",
+          "name" : "Exam Terms Interface",
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_interface"
+          },
+          "relationships" : [ {
+            "description" : "Translates user requests for term management",
+            "destinationId" : "4",
+            "id" : "92",
+            "sourceId" : "3",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Reads which students are enrolled in which courses.",
+            "destinationId" : "36",
+            "id" : "93",
+            "sourceId" : "3",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Reads which teacher teaches which courses.",
+            "destinationId" : "36",
+            "id" : "94",
+            "sourceId" : "3",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Assures user authenticity",
+            "destinationId" : "38",
+            "id" : "101",
+            "sourceId" : "3",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Encapsulates exam term management business logic.",
+          "documentation" : { },
+          "group" : "Business Layer",
+          "id" : "4",
+          "name" : "Exam Terms Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_controller"
+          },
+          "relationships" : [ {
+            "description" : "Reads and writes term data",
+            "destinationId" : "7",
+            "id" : "95",
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Coordinates for room reservations",
+            "destinationId" : "5",
+            "id" : "97",
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests notifications",
+            "destinationId" : "6",
+            "id" : "99",
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Queries about required credits",
+            "destinationId" : "8",
+            "id" : "102",
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Queries for required credits",
+            "destinationId" : "9",
+            "id" : "104",
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Handles scheduling of exam terms and coordinates with the Schedules System.",
+          "documentation" : { },
+          "group" : "Business Layer",
+          "id" : "5",
+          "name" : "Exam Scheduler",
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_scheduler"
+          },
+          "relationships" : [ {
+            "description" : "Asks for room reservations",
+            "destinationId" : "35",
+            "id" : "98",
+            "sourceId" : "5",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Requests notifications to be sent for exam term updates.",
+          "documentation" : { },
+          "group" : "Business Layer",
+          "id" : "6",
+          "name" : "Notification Coordinator",
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_notifier"
+          },
+          "relationships" : [ {
+            "description" : "Sends notifications about term updates",
+            "destinationId" : "37",
+            "id" : "100",
+            "sourceId" : "6",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Provides access to the underlying exam terms database.",
+          "documentation" : { },
+          "group" : "Persistence Layer",
+          "id" : "7",
+          "name" : "Exam Terms Repository",
+          "properties" : {
+            "structurizr.dsl.identifier" : "term_repo"
+          },
+          "relationships" : [ {
+            "description" : "Accesses exam term data",
+            "destinationId" : "23",
+            "id" : "96",
+            "sourceId" : "7",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Manages exam terms.",
+        "documentation" : { },
+        "id" : "2",
+        "name" : "Exam Terms Manager",
+        "properties" : {
+          "structurizr.dsl.identifier" : "term_manager"
+        },
+        "relationships" : [ {
+          "description" : "Reads and writes exam terms",
+          "destinationId" : "23",
+          "id" : "53",
+          "sourceId" : "2",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Asks for room reservations",
+          "destinationId" : "35",
+          "id" : "54",
+          "sourceId" : "2",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Reads which students are enrolled into which courses",
+          "destinationId" : "36",
+          "id" : "56",
+          "sourceId" : "2",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Requests to send notifications",
+          "destinationId" : "37",
+          "id" : "58",
+          "sourceId" : "2",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Delegates authentication and authorisation",
+          "destinationId" : "38",
+          "id" : "60",
+          "sourceId" : "2",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Queries about required credits",
+          "destinationId" : "8",
+          "id" : "103",
+          "linkedRelationshipId" : "102",
+          "sourceId" : "2"
+        }, {
+          "description" : "Queries for required credits",
+          "destinationId" : "9",
+          "id" : "105",
+          "linkedRelationshipId" : "104",
+          "sourceId" : "2"
+        }, {
+          "description" : "Unit tests for Java",
+          "destinationId" : "28",
+          "id" : "108",
+          "sourceId" : "2",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "description" : "Translates API requests to business logic calls for result management.",
+          "documentation" : { },
+          "group" : "API Layer",
+          "id" : "9",
+          "name" : "Result Interface",
+          "properties" : {
+            "structurizr.dsl.identifier" : "result_interface"
+          },
+          "relationships" : [ {
+            "description" : "Translates API requests for result processing",
+            "destinationId" : "10",
+            "id" : "73",
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Translates API requests for result retrieval",
+            "destinationId" : "11",
+            "id" : "74",
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Assures user authenticity",
+            "destinationId" : "38",
+            "id" : "80",
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Processes and updates exam results.",
+          "documentation" : { },
+          "group" : "Business Layer",
+          "id" : "10",
+          "name" : "Result Processor",
+          "properties" : {
+            "structurizr.dsl.identifier" : "result_processor"
+          },
+          "relationships" : [ {
+            "description" : "Writes results to the database",
+            "destinationId" : "13",
+            "id" : "75",
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Requests notifications for result updates",
+            "destinationId" : "12",
+            "id" : "78",
+            "sourceId" : "10",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Handles retrieval of exam results for display.",
+          "documentation" : { },
+          "group" : "Business Layer",
+          "id" : "11",
+          "name" : "Result Retriever",
+          "properties" : {
+            "structurizr.dsl.identifier" : "result_retriever"
+          },
+          "relationships" : [ {
+            "description" : "Reads results from the database",
+            "destinationId" : "13",
+            "id" : "76",
+            "sourceId" : "11",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Requests notifications for result updates.",
+          "documentation" : { },
+          "group" : "Business Layer",
+          "id" : "12",
+          "name" : "Notification Coordinator",
+          "properties" : {
+            "structurizr.dsl.identifier" : "result_notifier"
+          },
+          "relationships" : [ {
+            "description" : "Sends notifications about term updates",
+            "destinationId" : "37",
+            "id" : "79",
+            "sourceId" : "12",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Provides access to the underlying exam results database.",
+          "documentation" : { },
+          "group" : "Persistence Layer",
+          "id" : "13",
+          "name" : "Result Repository",
+          "properties" : {
+            "structurizr.dsl.identifier" : "result_repo"
+          },
+          "relationships" : [ {
+            "description" : "Accesses exam result data",
+            "destinationId" : "24",
+            "id" : "77",
+            "sourceId" : "13",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Manages course credits and exam results.",
+        "documentation" : { },
+        "id" : "8",
+        "name" : "Result Manager",
+        "properties" : {
+          "structurizr.dsl.identifier" : "result_manager"
+        },
+        "relationships" : [ {
+          "description" : "Reads and writes exam results",
+          "destinationId" : "24",
+          "id" : "61",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Reads which students are enrolled into which courses",
+          "destinationId" : "36",
+          "id" : "62",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Requests to send notifications",
+          "destinationId" : "37",
+          "id" : "63",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Delegates authentication and authorisation",
+          "destinationId" : "38",
+          "id" : "64",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Unit tests for Java",
+          "destinationId" : "28",
+          "id" : "109",
+          "sourceId" : "8",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "description" : "Translates API requests to bussiness logic calls.",
+          "documentation" : { },
+          "group" : "API Layer",
+          "id" : "15",
+          "name" : "Statistics Interface",
+          "properties" : {
+            "structurizr.dsl.identifier" : "stats_interface"
+          },
+          "relationships" : [ {
+            "description" : "Assures user authenticity",
+            "destinationId" : "38",
+            "id" : "39",
+            "sourceId" : "15",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Translates user requests",
+            "destinationId" : "16",
+            "id" : "42",
+            "sourceId" : "15",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Encapsulates statistics info business logic.",
+          "documentation" : { },
+          "group" : "Business Layer",
+          "id" : "16",
+          "name" : "Statistics",
+          "properties" : {
+            "structurizr.dsl.identifier" : "stats_controller"
+          },
+          "relationships" : [ {
+            "description" : "Provides statistical data",
+            "destinationId" : "17",
+            "id" : "43",
+            "sourceId" : "16",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Provides access to the underlying statistics database.",
+          "documentation" : { },
+          "group" : "Persistence Layer",
+          "id" : "17",
+          "name" : "Statistics Repository",
+          "properties" : {
+            "structurizr.dsl.identifier" : "stats_repo"
+          },
+          "relationships" : [ {
+            "description" : "Accesses statistical data",
+            "destinationId" : "25",
+            "id" : "44",
+            "sourceId" : "17",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Manages result statistics.",
+        "documentation" : { },
+        "id" : "14",
+        "name" : "Exam Statistics Manager",
+        "properties" : {
+          "structurizr.dsl.identifier" : "stats_manager"
+        },
+        "relationships" : [ {
+          "description" : "Assures user authenticity",
+          "destinationId" : "38",
+          "id" : "40",
+          "linkedRelationshipId" : "39",
+          "sourceId" : "14"
+        }, {
+          "description" : "Accesses statistical data",
+          "destinationId" : "25",
+          "id" : "45",
+          "linkedRelationshipId" : "44",
+          "sourceId" : "14"
+        }, {
+          "description" : "Unit tests for Java",
+          "destinationId" : "28",
+          "id" : "110",
+          "sourceId" : "14",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "description" : "Command line interface. Starts the task and provides the parameters of the task.",
+          "documentation" : { },
+          "group" : "Presentation",
+          "id" : "19",
+          "name" : "Task Manager",
+          "properties" : {
+            "structurizr.dsl.identifier" : "aggregator_manager"
+          },
+          "relationships" : [ {
+            "description" : "Starts task with selected parameters",
+            "destinationId" : "20",
+            "id" : "65",
+            "sourceId" : "19",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Reads historic results for the task and creates a stream.",
+          "documentation" : { },
+          "group" : "Pipeline",
+          "id" : "20",
+          "name" : "Result Reader",
+          "properties" : {
+            "structurizr.dsl.identifier" : "aggregator_producer"
+          },
+          "relationships" : [ {
+            "description" : "Reads historic results",
+            "destinationId" : "24",
+            "id" : "66",
+            "sourceId" : "20",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Passes data",
+            "destinationId" : "21",
+            "id" : "71",
+            "sourceId" : "20",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Aggregates results into statistics based on the settings.",
+          "documentation" : { },
+          "group" : "Pipeline",
+          "id" : "21",
+          "name" : "Aggregator",
+          "properties" : {
+            "structurizr.dsl.identifier" : "aggregator_transformer"
+          },
+          "relationships" : [ {
+            "description" : "Reads aggregation rules",
+            "destinationId" : "19",
+            "id" : "68",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Passes data",
+            "destinationId" : "22",
+            "id" : "72",
+            "sourceId" : "21",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Writes statistics into the statistics database.",
+          "documentation" : { },
+          "group" : "Pipeline",
+          "id" : "22",
+          "name" : "Statistics Writer",
+          "properties" : {
+            "structurizr.dsl.identifier" : "aggregator_consumer"
+          },
+          "relationships" : [ {
+            "description" : "Writes aggregated statistics",
+            "destinationId" : "25",
+            "id" : "69",
+            "sourceId" : "22",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "Aggregates past results into statistics.",
+        "documentation" : { },
+        "id" : "18",
+        "name" : "Result Aggregator",
+        "properties" : {
+          "structurizr.dsl.identifier" : "aggregator"
+        },
+        "relationships" : [ {
+          "description" : "Reads historic results",
+          "destinationId" : "24",
+          "id" : "67",
+          "linkedRelationshipId" : "66",
+          "sourceId" : "18"
+        }, {
+          "description" : "Writes aggregated statistics",
+          "destinationId" : "25",
+          "id" : "70",
+          "linkedRelationshipId" : "69",
+          "sourceId" : "18"
+        }, {
+          "description" : "Unit tests for Java",
+          "destinationId" : "29",
+          "id" : "111",
+          "sourceId" : "18",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "CLI Application"
+      }, {
+        "documentation" : { },
+        "id" : "23",
+        "name" : "Exam Terms Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "term_database"
+        },
+        "relationships" : [ {
+          "description" : "Performance testing",
+          "destinationId" : "32",
+          "id" : "112",
+          "sourceId" : "23",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Security testing",
+          "destinationId" : "33",
+          "id" : "115",
+          "sourceId" : "23",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Backup testing",
+          "destinationId" : "34",
+          "id" : "118",
+          "sourceId" : "23",
+          "tags" : "Relationship"
+        }, {
+          "description" : "functional testing",
+          "destinationId" : "31",
+          "id" : "121",
+          "sourceId" : "23",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Database"
+      }, {
+        "documentation" : { },
+        "id" : "24",
+        "name" : "Exam Results Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "results_database"
+        },
+        "relationships" : [ {
+          "description" : "Performance testing",
+          "destinationId" : "32",
+          "id" : "114",
+          "sourceId" : "24",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Security testing",
+          "destinationId" : "33",
+          "id" : "117",
+          "sourceId" : "24",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Backup testing",
+          "destinationId" : "34",
+          "id" : "120",
+          "sourceId" : "24",
+          "tags" : "Relationship"
+        }, {
+          "description" : "functional testing",
+          "destinationId" : "31",
+          "id" : "123",
+          "sourceId" : "24",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Database"
+      }, {
+        "documentation" : { },
+        "id" : "25",
+        "name" : "Exam Statistics Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "stats_database"
+        },
+        "relationships" : [ {
+          "description" : "Performance testing",
+          "destinationId" : "32",
+          "id" : "113",
+          "sourceId" : "25",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Security testing",
+          "destinationId" : "33",
+          "id" : "116",
+          "sourceId" : "25",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Backup testing",
+          "destinationId" : "34",
+          "id" : "119",
+          "sourceId" : "25",
+          "tags" : "Relationship"
+        }, {
+          "description" : "functional testing",
+          "destinationId" : "31",
+          "id" : "122",
+          "sourceId" : "25",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Database"
+      }, {
+        "description" : "Displays data to the users and allows them to send requests.",
+        "documentation" : { },
+        "id" : "26",
+        "name" : "Exam Web App",
+        "properties" : {
+          "structurizr.dsl.identifier" : "exams_web_app"
+        },
+        "relationships" : [ {
+          "description" : "Requests information and changes about exam terms",
+          "destinationId" : "2",
+          "id" : "46",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Requests information and changes about exam results",
+          "destinationId" : "8",
+          "id" : "47",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Requests statistics about exam results",
+          "destinationId" : "15",
+          "id" : "48",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Requests statistics about exam results",
+          "destinationId" : "14",
+          "id" : "49",
+          "linkedRelationshipId" : "48",
+          "sourceId" : "26"
+        }, {
+          "description" : "Requests information and interactive possibilities",
+          "destinationId" : "3",
+          "id" : "50",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Delegates authentication and authorisation",
+          "destinationId" : "38",
+          "id" : "51",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Requests and modifies exam results",
+          "destinationId" : "9",
+          "id" : "52",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Tests UI",
+          "destinationId" : "27",
+          "id" : "106",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Load testing",
+          "destinationId" : "30",
+          "id" : "107",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Web Front-End"
+      }, {
+        "description" : "Navigation flow & UI Elements",
+        "documentation" : { },
+        "id" : "27",
+        "name" : "Selenium Tests",
+        "properties" : {
+          "structurizr.dsl.identifier" : "selenium_test"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Unit tests",
+        "documentation" : { },
+        "id" : "28",
+        "name" : "JUnit Manager Tests",
+        "properties" : {
+          "structurizr.dsl.identifier" : "junit_manager_test"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Unit tests",
+        "documentation" : { },
+        "id" : "29",
+        "name" : "JUnit Aggregator Tests",
+        "properties" : {
+          "structurizr.dsl.identifier" : "junit_aggregator_test"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Load Testing",
+        "documentation" : { },
+        "id" : "30",
+        "name" : "Apache Jmeter Tests",
+        "properties" : {
+          "structurizr.dsl.identifier" : "apache_jmeter_test"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Functional testing for database",
+        "documentation" : { },
+        "id" : "31",
+        "name" : "Toad For Oracle",
+        "properties" : {
+          "structurizr.dsl.identifier" : "toad_oracle"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Performance testing",
+        "documentation" : { },
+        "id" : "32",
+        "name" : "Oracle Enterprise Manager",
+        "properties" : {
+          "structurizr.dsl.identifier" : "oracle_enterprise_manager"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Security Testing",
+        "documentation" : { },
+        "id" : "33",
+        "name" : "Oracle SQL Developer",
+        "properties" : {
+          "structurizr.dsl.identifier" : "oracle_sql_developer"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "description" : "Backup Testing",
+        "documentation" : { },
+        "id" : "34",
+        "name" : "Oracle Rman",
+        "properties" : {
+          "structurizr.dsl.identifier" : "oracle_rman"
+        },
+        "tags" : "Element,Container"
+      } ],
+      "description" : "Allows users to view and manage exam terms and results and enroll into exam terms. Also provides statistics to managers.",
+      "documentation" : { },
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "Examination System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "s"
+      },
+      "relationships" : [ {
+        "description" : "Assures user authenticity",
+        "destinationId" : "38",
+        "id" : "41",
+        "linkedRelationshipId" : "39",
+        "sourceId" : "1"
+      }, {
+        "description" : "Asks for room reservations",
+        "destinationId" : "35",
+        "id" : "55",
+        "linkedRelationshipId" : "54",
+        "sourceId" : "1"
+      }, {
+        "description" : "Reads which students are enrolled into which courses",
+        "destinationId" : "36",
+        "id" : "57",
+        "linkedRelationshipId" : "56",
+        "sourceId" : "1"
+      }, {
+        "description" : "Requests to send notifications",
+        "destinationId" : "37",
+        "id" : "59",
+        "linkedRelationshipId" : "58",
+        "sourceId" : "1"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Allows users to view and manage schedules.",
+      "documentation" : { },
+      "id" : "35",
+      "location" : "Unspecified",
+      "name" : "Schedules System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "system_schedules"
+      },
+      "tags" : "Element,Software System,Existing System"
+    }, {
+      "description" : "Allows users to manage courses and enroll into courses.",
+      "documentation" : { },
+      "id" : "36",
+      "location" : "Unspecified",
+      "name" : "Enrollment System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "system_enrollment"
+      },
+      "tags" : "Element,Software System,Existing System"
+    }, {
+      "description" : "Sends notifications to users.",
+      "documentation" : { },
+      "id" : "37",
+      "location" : "Unspecified",
+      "name" : "Notification System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "system_notifications"
+      },
+      "tags" : "Element,Software System,Existing System"
+    }, {
+      "description" : "Provides Authentication and Authorisation.",
+      "documentation" : { },
+      "id" : "38",
+      "location" : "Unspecified",
+      "name" : "Auth",
+      "properties" : {
+        "structurizr.dsl.identifier" : "system_auth"
+      },
+      "tags" : "Element,Software System,Existing System"
+    } ]
+  },
+  "name" : "Examination System",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlICJFeGFtaW5hdGlvbiBTeXN0ZW0iICIiIHsKICAgIG1vZGVsIHsKICAgICAgICBTID0gc29mdHdhcmVTeXN0ZW0gIkV4YW1pbmF0aW9uIFN5c3RlbSIgIkFsbG93cyB1c2VycyB0byB2aWV3IGFuZCBtYW5hZ2UgZXhhbSB0ZXJtcyBhbmQgcmVzdWx0cyBhbmQgZW5yb2xsIGludG8gZXhhbSB0ZXJtcy4gQWxzbyBwcm92aWRlcyBzdGF0aXN0aWNzIHRvIG1hbmFnZXJzLiIgewogICAgICAgICAgICB0ZXJtX21hbmFnZXIgPSBjb250YWluZXIgIkV4YW0gVGVybXMgTWFuYWdlciIgIk1hbmFnZXMgZXhhbSB0ZXJtcy4iewogICAgICAgICAgICAgICAgZ3JvdXAgIkFQSSBMYXllciIgewogICAgICAgICAgICAgICAgICAgIHRlcm1faW50ZXJmYWNlID0gY29tcG9uZW50ICJFeGFtIFRlcm1zIEludGVyZmFjZSIgIlRyYW5zbGF0ZXMgQVBJIHJlcXVlc3RzIHRvIGJ1c2luZXNzIGxvZ2ljIGNhbGxzLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGdyb3VwICJCdXNpbmVzcyBMYXllciIgewogICAgICAgICAgICAgICAgICAgIHRlcm1fY29udHJvbGxlciA9IGNvbXBvbmVudCAiRXhhbSBUZXJtcyBDb250cm9sbGVyIiAiRW5jYXBzdWxhdGVzIGV4YW0gdGVybSBtYW5hZ2VtZW50IGJ1c2luZXNzIGxvZ2ljLiIKICAgICAgICAgICAgICAgICAgICB0ZXJtX3NjaGVkdWxlciA9IGNvbXBvbmVudCAiRXhhbSBTY2hlZHVsZXIiICJIYW5kbGVzIHNjaGVkdWxpbmcgb2YgZXhhbSB0ZXJtcyBhbmQgY29vcmRpbmF0ZXMgd2l0aCB0aGUgU2NoZWR1bGVzIFN5c3RlbS4iCiAgICAgICAgICAgICAgICAgICAgdGVybV9ub3RpZmllciA9IGNvbXBvbmVudCAiTm90aWZpY2F0aW9uIENvb3JkaW5hdG9yIiAiUmVxdWVzdHMgbm90aWZpY2F0aW9ucyB0byBiZSBzZW50IGZvciBleGFtIHRlcm0gdXBkYXRlcy4iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBncm91cCAiUGVyc2lzdGVuY2UgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICB0ZXJtX3JlcG8gPSBjb21wb25lbnQgIkV4YW0gVGVybXMgUmVwb3NpdG9yeSIgIlByb3ZpZGVzIGFjY2VzcyB0byB0aGUgdW5kZXJseWluZyBleGFtIHRlcm1zIGRhdGFiYXNlLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQoKICAgICAgICAgICAgcmVzdWx0X21hbmFnZXIgPSBjb250YWluZXIgIlJlc3VsdCBNYW5hZ2VyIiAiTWFuYWdlcyBjb3Vyc2UgY3JlZGl0cyBhbmQgZXhhbSByZXN1bHRzLiIgewoKICAgICAgICAgICAgICAgIGdyb3VwICJBUEkgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICByZXN1bHRfaW50ZXJmYWNlID0gY29tcG9uZW50ICJSZXN1bHQgSW50ZXJmYWNlIiAiVHJhbnNsYXRlcyBBUEkgcmVxdWVzdHMgdG8gYnVzaW5lc3MgbG9naWMgY2FsbHMgZm9yIHJlc3VsdCBtYW5hZ2VtZW50LiIKICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICBncm91cCAiQnVzaW5lc3MgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICByZXN1bHRfcHJvY2Vzc29yID0gY29tcG9uZW50ICJSZXN1bHQgUHJvY2Vzc29yIiAiUHJvY2Vzc2VzIGFuZCB1cGRhdGVzIGV4YW0gcmVzdWx0cy4iCiAgICAgICAgICAgICAgICAgICAgcmVzdWx0X3JldHJpZXZlciA9IGNvbXBvbmVudCAiUmVzdWx0IFJldHJpZXZlciIgIkhhbmRsZXMgcmV0cmlldmFsIG9mIGV4YW0gcmVzdWx0cyBmb3IgZGlzcGxheS4iCiAgICAgICAgICAgICAgICAgICAgcmVzdWx0X25vdGlmaWVyID0gY29tcG9uZW50ICJOb3RpZmljYXRpb24gQ29vcmRpbmF0b3IiICJSZXF1ZXN0cyBub3RpZmljYXRpb25zIGZvciByZXN1bHQgdXBkYXRlcy4iCiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgZ3JvdXAgIlBlcnNpc3RlbmNlIExheWVyIiB7CiAgICAgICAgICAgICAgICAgICAgcmVzdWx0X3JlcG8gPSBjb21wb25lbnQgIlJlc3VsdCBSZXBvc2l0b3J5IiAiUHJvdmlkZXMgYWNjZXNzIHRvIHRoZSB1bmRlcmx5aW5nIGV4YW0gcmVzdWx0cyBkYXRhYmFzZS4iCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIHN0YXRzX21hbmFnZXIgPSBjb250YWluZXIgIkV4YW0gU3RhdGlzdGljcyBNYW5hZ2VyIiAiTWFuYWdlcyByZXN1bHQgc3RhdGlzdGljcy4iIHsKICAgICAgICAgICAgICAgIGdyb3VwICJBUEkgTGF5ZXIiIHsKICAgICAgICAgICAgICAgICAgICBzdGF0c19pbnRlcmZhY2UgPSBjb21wb25lbnQgIlN0YXRpc3RpY3MgSW50ZXJmYWNlIiAiVHJhbnNsYXRlcyBBUEkgcmVxdWVzdHMgdG8gYnVzc2luZXNzIGxvZ2ljIGNhbGxzLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGdyb3VwICJCdXNpbmVzcyBMYXllciIgewogICAgICAgICAgICAgICAgICAgIHN0YXRzX2NvbnRyb2xsZXIgPSBjb21wb25lbnQgIlN0YXRpc3RpY3MiICJFbmNhcHN1bGF0ZXMgc3RhdGlzdGljcyBpbmZvIGJ1c2luZXNzIGxvZ2ljLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGdyb3VwICJQZXJzaXN0ZW5jZSBMYXllciIgewogICAgICAgICAgICAgICAgICAgIHN0YXRzX3JlcG8gPSBjb21wb25lbnQgIlN0YXRpc3RpY3MgUmVwb3NpdG9yeSIgIlByb3ZpZGVzIGFjY2VzcyB0byB0aGUgdW5kZXJseWluZyBzdGF0aXN0aWNzIGRhdGFiYXNlLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQoKICAgICAgICAgICAgYWdncmVnYXRvciA9IGNvbnRhaW5lciAiUmVzdWx0IEFnZ3JlZ2F0b3IiICJBZ2dyZWdhdGVzIHBhc3QgcmVzdWx0cyBpbnRvIHN0YXRpc3RpY3MuIiAiQ0xJIEFwcGxpY2F0aW9uIiB7CiAgICAgICAgICAgICAgICBncm91cCAiUHJlc2VudGF0aW9uIiB7CiAgICAgICAgICAgICAgICAgICAgYWdncmVnYXRvcl9tYW5hZ2VyID0gY29tcG9uZW50ICJUYXNrIE1hbmFnZXIiICJDb21tYW5kIGxpbmUgaW50ZXJmYWNlLiBTdGFydHMgdGhlIHRhc2sgYW5kIHByb3ZpZGVzIHRoZSBwYXJhbWV0ZXJzIG9mIHRoZSB0YXNrLiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGdyb3VwICJQaXBlbGluZSIgewogICAgICAgICAgICAgICAgICAgIGFnZ3JlZ2F0b3JfcHJvZHVjZXIgPSBjb21wb25lbnQgIlJlc3VsdCBSZWFkZXIiICJSZWFkcyBoaXN0b3JpYyByZXN1bHRzIGZvciB0aGUgdGFzayBhbmQgY3JlYXRlcyBhIHN0cmVhbS4iCiAgICAgICAgICAgICAgICAgICAgYWdncmVnYXRvcl90cmFuc2Zvcm1lciA9IGNvbXBvbmVudCAiQWdncmVnYXRvciIgIkFnZ3JlZ2F0ZXMgcmVzdWx0cyBpbnRvIHN0YXRpc3RpY3MgYmFzZWQgb24gdGhlIHNldHRpbmdzLiIKICAgICAgICAgICAgICAgICAgICBhZ2dyZWdhdG9yX2NvbnN1bWVyID0gY29tcG9uZW50ICJTdGF0aXN0aWNzIFdyaXRlciIgIldyaXRlcyBzdGF0aXN0aWNzIGludG8gdGhlIHN0YXRpc3RpY3MgZGF0YWJhc2UuIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CgogICAgICAgICAgICB0ZXJtX2RhdGFiYXNlID0gY29udGFpbmVyICJFeGFtIFRlcm1zIERhdGFiYXNlIiAiIiAiIiAiRGF0YWJhc2UiCiAgICAgICAgICAgIHJlc3VsdHNfZGF0YWJhc2UgPSBjb250YWluZXIgIkV4YW0gUmVzdWx0cyBEYXRhYmFzZSIgIiIgIiIgIkRhdGFiYXNlIgogICAgICAgICAgICBzdGF0c19kYXRhYmFzZSA9IGNvbnRhaW5lciAiRXhhbSBTdGF0aXN0aWNzIERhdGFiYXNlIiAiIiAiIiAiRGF0YWJhc2UiCgogICAgICAgICAgICBleGFtc193ZWJfYXBwID0gY29udGFpbmVyICJFeGFtIFdlYiBBcHAiICJEaXNwbGF5cyBkYXRhIHRvIHRoZSB1c2VycyBhbmQgYWxsb3dzIHRoZW0gdG8gc2VuZCByZXF1ZXN0cy4iICIiICJXZWIgRnJvbnQtRW5kIgoKCiAgICAgICAgICAgIHNlbGVuaXVtX3Rlc3QgPSBjb250YWluZXIgIlNlbGVuaXVtIFRlc3RzIiAiTmF2aWdhdGlvbiBmbG93ICYgVUkgRWxlbWVudHMiCiAgICAgICAgICAgIGp1bml0X21hbmFnZXJfdGVzdCA9IGNvbnRhaW5lciAiSlVuaXQgTWFuYWdlciBUZXN0cyIgIlVuaXQgdGVzdHMiCiAgICAgICAgICAgIGp1bml0X2FnZ3JlZ2F0b3JfdGVzdCA9IGNvbnRhaW5lciAiSlVuaXQgQWdncmVnYXRvciBUZXN0cyIgIlVuaXQgdGVzdHMiCiAgICAgICAgICAgIGFwYWNoZV9qbWV0ZXJfdGVzdCA9IGNvbnRhaW5lciAiQXBhY2hlIEptZXRlciBUZXN0cyIgIkxvYWQgVGVzdGluZyIKICAgICAgICAgICAgdG9hZF9vcmFjbGUgPSBjb250YWluZXIgIlRvYWQgRm9yIE9yYWNsZSIgIkZ1bmN0aW9uYWwgdGVzdGluZyBmb3IgZGF0YWJhc2UiCiAgICAgICAgICAgIG9yYWNsZV9lbnRlcnByaXNlX21hbmFnZXIgPSBjb250YWluZXIgIk9yYWNsZSBFbnRlcnByaXNlIE1hbmFnZXIiICJQZXJmb3JtYW5jZSB0ZXN0aW5nIgogICAgICAgICAgICBvcmFjbGVfc3FsX2RldmVsb3BlciA9IGNvbnRhaW5lciAiT3JhY2xlIFNRTCBEZXZlbG9wZXIiICJTZWN1cml0eSBUZXN0aW5nIgogICAgICAgICAgICBvcmFjbGVfcm1hbiA9IGNvbnRhaW5lciAiT3JhY2xlIFJtYW4iICJCYWNrdXAgVGVzdGluZyIKICAgICAgICB9CgogICAgICAgIHN5c3RlbV9zY2hlZHVsZXMgPSBzb2Z0d2FyZVN5c3RlbSAiU2NoZWR1bGVzIFN5c3RlbSIgIkFsbG93cyB1c2VycyB0byB2aWV3IGFuZCBtYW5hZ2Ugc2NoZWR1bGVzLiIgIkV4aXN0aW5nIFN5c3RlbSIKICAgICAgICBzeXN0ZW1fZW5yb2xsbWVudCA9IHNvZnR3YXJlU3lzdGVtICJFbnJvbGxtZW50IFN5c3RlbSIgIkFsbG93cyB1c2VycyB0byBtYW5hZ2UgY291cnNlcyBhbmQgZW5yb2xsIGludG8gY291cnNlcy4iICJFeGlzdGluZyBTeXN0ZW0iCiAgICAgICAgc3lzdGVtX25vdGlmaWNhdGlvbnMgPSBzb2Z0d2FyZVN5c3RlbSAiTm90aWZpY2F0aW9uIFN5c3RlbSIgIlNlbmRzIG5vdGlmaWNhdGlvbnMgdG8gdXNlcnMuIiAiRXhpc3RpbmcgU3lzdGVtIgogICAgICAgIHN5c3RlbV9hdXRoID0gc29mdHdhcmVTeXN0ZW0gIkF1dGgiICJQcm92aWRlcyBBdXRoZW50aWNhdGlvbiBhbmQgQXV0aG9yaXNhdGlvbi4iICJFeGlzdGluZyBTeXN0ZW0iCgogICAgICAgIHN0YXRzX2ludGVyZmFjZSAtPiBzeXN0ZW1fYXV0aCAiQXNzdXJlcyB1c2VyIGF1dGhlbnRpY2l0eSIKICAgICAgICBzdGF0c19pbnRlcmZhY2UgLT4gc3RhdHNfY29udHJvbGxlciAiVHJhbnNsYXRlcyB1c2VyIHJlcXVlc3RzIgogICAgICAgIHN0YXRzX2NvbnRyb2xsZXIgLT4gc3RhdHNfcmVwbyAiUHJvdmlkZXMgc3RhdGlzdGljYWwgZGF0YSIKICAgICAgICBzdGF0c19yZXBvIC0+IHN0YXRzX2RhdGFiYXNlICJBY2Nlc3NlcyBzdGF0aXN0aWNhbCBkYXRhIgoKICAgICAgICBleGFtc193ZWJfYXBwIC0+IHRlcm1fbWFuYWdlciAiUmVxdWVzdHMgaW5mb3JtYXRpb24gYW5kIGNoYW5nZXMgYWJvdXQgZXhhbSB0ZXJtcyIKICAgICAgICBleGFtc193ZWJfYXBwIC0+IHJlc3VsdF9tYW5hZ2VyICJSZXF1ZXN0cyBpbmZvcm1hdGlvbiBhbmQgY2hhbmdlcyBhYm91dCBleGFtIHJlc3VsdHMiCiAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiBzdGF0c19pbnRlcmZhY2UgIlJlcXVlc3RzIHN0YXRpc3RpY3MgYWJvdXQgZXhhbSByZXN1bHRzIgogICAgICAgIGV4YW1zX3dlYl9hcHAgLT4gdGVybV9pbnRlcmZhY2UgIlJlcXVlc3RzIGluZm9ybWF0aW9uIGFuZCBpbnRlcmFjdGl2ZSBwb3NzaWJpbGl0aWVzIgogICAgICAgIGV4YW1zX3dlYl9hcHAgLT4gc3lzdGVtX2F1dGggIkRlbGVnYXRlcyBhdXRoZW50aWNhdGlvbiBhbmQgYXV0aG9yaXNhdGlvbiIKICAgICAgICBleGFtc193ZWJfYXBwIC0+IHJlc3VsdF9pbnRlcmZhY2UgIlJlcXVlc3RzIGFuZCBtb2RpZmllcyBleGFtIHJlc3VsdHMiCgogICAgICAgIHRlcm1fbWFuYWdlciAtPiB0ZXJtX2RhdGFiYXNlICJSZWFkcyBhbmQgd3JpdGVzIGV4YW0gdGVybXMiCiAgICAgICAgdGVybV9tYW5hZ2VyIC0+IHN5c3RlbV9zY2hlZHVsZXMgIkFza3MgZm9yIHJvb20gcmVzZXJ2YXRpb25zIgogICAgICAgIHRlcm1fbWFuYWdlciAtPiBzeXN0ZW1fZW5yb2xsbWVudCAiUmVhZHMgd2hpY2ggc3R1ZGVudHMgYXJlIGVucm9sbGVkIGludG8gd2hpY2ggY291cnNlcyIKICAgICAgICB0ZXJtX21hbmFnZXIgLT4gc3lzdGVtX25vdGlmaWNhdGlvbnMgIlJlcXVlc3RzIHRvIHNlbmQgbm90aWZpY2F0aW9ucyIKICAgICAgICB0ZXJtX21hbmFnZXIgLT4gc3lzdGVtX2F1dGggIkRlbGVnYXRlcyBhdXRoZW50aWNhdGlvbiBhbmQgYXV0aG9yaXNhdGlvbiIKCiAgICAgICAgcmVzdWx0X21hbmFnZXIgLT4gcmVzdWx0c19kYXRhYmFzZSAiUmVhZHMgYW5kIHdyaXRlcyBleGFtIHJlc3VsdHMiCiAgICAgICAgcmVzdWx0X21hbmFnZXIgLT4gc3lzdGVtX2Vucm9sbG1lbnQgIlJlYWRzIHdoaWNoIHN0dWRlbnRzIGFyZSBlbnJvbGxlZCBpbnRvIHdoaWNoIGNvdXJzZXMiCiAgICAgICAgcmVzdWx0X21hbmFnZXIgLT4gc3lzdGVtX25vdGlmaWNhdGlvbnMgIlJlcXVlc3RzIHRvIHNlbmQgbm90aWZpY2F0aW9ucyIKICAgICAgICByZXN1bHRfbWFuYWdlciAtPiBzeXN0ZW1fYXV0aCAiRGVsZWdhdGVzIGF1dGhlbnRpY2F0aW9uIGFuZCBhdXRob3Jpc2F0aW9uIgoKICAgICAgICBhZ2dyZWdhdG9yX21hbmFnZXIgLT4gYWdncmVnYXRvcl9wcm9kdWNlciAiU3RhcnRzIHRhc2sgd2l0aCBzZWxlY3RlZCBwYXJhbWV0ZXJzIgogICAgICAgIGFnZ3JlZ2F0b3JfcHJvZHVjZXIgLT4gcmVzdWx0c19kYXRhYmFzZSAiUmVhZHMgaGlzdG9yaWMgcmVzdWx0cyIKICAgICAgICBhZ2dyZWdhdG9yX3RyYW5zZm9ybWVyIC0+IGFnZ3JlZ2F0b3JfbWFuYWdlciAiUmVhZHMgYWdncmVnYXRpb24gcnVsZXMiCiAgICAgICAgYWdncmVnYXRvcl9jb25zdW1lciAtPiBzdGF0c19kYXRhYmFzZSAiV3JpdGVzIGFnZ3JlZ2F0ZWQgc3RhdGlzdGljcyIKICAgICAgICBhZ2dyZWdhdG9yX3Byb2R1Y2VyIC0+IGFnZ3JlZ2F0b3JfdHJhbnNmb3JtZXIgIlBhc3NlcyBkYXRhIgogICAgICAgIGFnZ3JlZ2F0b3JfdHJhbnNmb3JtZXIgLT4gYWdncmVnYXRvcl9jb25zdW1lciAiUGFzc2VzIGRhdGEiCgogICAgICAgIHJlc3VsdF9pbnRlcmZhY2UgLT4gcmVzdWx0X3Byb2Nlc3NvciAiVHJhbnNsYXRlcyBBUEkgcmVxdWVzdHMgZm9yIHJlc3VsdCBwcm9jZXNzaW5nIgogICAgICAgIHJlc3VsdF9pbnRlcmZhY2UgLT4gcmVzdWx0X3JldHJpZXZlciAiVHJhbnNsYXRlcyBBUEkgcmVxdWVzdHMgZm9yIHJlc3VsdCByZXRyaWV2YWwiCiAgICAgICAgcmVzdWx0X3Byb2Nlc3NvciAtPiByZXN1bHRfcmVwbyAiV3JpdGVzIHJlc3VsdHMgdG8gdGhlIGRhdGFiYXNlIgogICAgICAgIHJlc3VsdF9yZXRyaWV2ZXIgLT4gcmVzdWx0X3JlcG8gIlJlYWRzIHJlc3VsdHMgZnJvbSB0aGUgZGF0YWJhc2UiCiAgICAgICAgcmVzdWx0X3JlcG8gLT4gcmVzdWx0c19kYXRhYmFzZSAiQWNjZXNzZXMgZXhhbSByZXN1bHQgZGF0YSIKICAgICAgICByZXN1bHRfcHJvY2Vzc29yIC0+IHJlc3VsdF9ub3RpZmllciAiUmVxdWVzdHMgbm90aWZpY2F0aW9ucyBmb3IgcmVzdWx0IHVwZGF0ZXMiCiAgICAgICAgcmVzdWx0X25vdGlmaWVyIC0+IHN5c3RlbV9ub3RpZmljYXRpb25zICJTZW5kcyBub3RpZmljYXRpb25zIGFib3V0IHRlcm0gdXBkYXRlcyIKICAgICAgICByZXN1bHRfaW50ZXJmYWNlIC0+IHN5c3RlbV9hdXRoICJBc3N1cmVzIHVzZXIgYXV0aGVudGljaXR5IgoKCiAgICAgICAgbWFuYWdlciA9IHBlcnNvbiAiTWFuYWdlciIKICAgICAgICBzdHVkZW50ID0gcGVyc29uICJTdHVkZW50IgogICAgICAgIHRlYWNoZXIgPSBwZXJzb24gIlRlYWNoZXIiCgogICAgICAgIG1hbmFnZXIgLT4gZXhhbXNfd2ViX2FwcCAiUmVhZHMgYWJvdXQgdGVhY2hlciBwZXJmb3JtYW5jZSIKICAgICAgICBzdHVkZW50IC0+IGV4YW1zX3dlYl9hcHAgIlJlZ2lzdGVycyB0byBleGFtIHRlcm1zIGFuZCB2aWV3cyBleGFtIHJlc3VsdHMiCiAgICAgICAgdGVhY2hlciAtPiBleGFtc193ZWJfYXBwICJNYWtlcyBleGFtIHRlcm1zIGFuZCBzZXRzIGV4YW0gcmVzdWx0cyIKICAgICAgICBtYW5hZ2VyIC0+IGFnZ3JlZ2F0b3JfbWFuYWdlciAiUnVucyB0YXNrcyIKCiAgICAgICAgIyBFeGFtIHRlcm0gbWFuYWdlcgogICAgICAgIHRlcm1faW50ZXJmYWNlIC0+IHRlcm1fY29udHJvbGxlciAiVHJhbnNsYXRlcyB1c2VyIHJlcXVlc3RzIGZvciB0ZXJtIG1hbmFnZW1lbnQiCiAgICAgICAgdGVybV9pbnRlcmZhY2UgLT4gc3lzdGVtX2Vucm9sbG1lbnQgIlJlYWRzIHdoaWNoIHN0dWRlbnRzIGFyZSBlbnJvbGxlZCBpbiB3aGljaCBjb3Vyc2VzLiAiCiAgICAgICAgdGVybV9pbnRlcmZhY2UgLT4gc3lzdGVtX2Vucm9sbG1lbnQgIlJlYWRzIHdoaWNoIHRlYWNoZXIgdGVhY2hlcyB3aGljaCBjb3Vyc2VzLiIKICAgICAgICB0ZXJtX2NvbnRyb2xsZXIgLT4gdGVybV9yZXBvICJSZWFkcyBhbmQgd3JpdGVzIHRlcm0gZGF0YSIKICAgICAgICB0ZXJtX3JlcG8gLT4gdGVybV9kYXRhYmFzZSAiQWNjZXNzZXMgZXhhbSB0ZXJtIGRhdGEiCiAgICAgICAgdGVybV9jb250cm9sbGVyIC0+IHRlcm1fc2NoZWR1bGVyICJDb29yZGluYXRlcyBmb3Igcm9vbSByZXNlcnZhdGlvbnMiCiAgICAgICAgdGVybV9zY2hlZHVsZXIgLT4gc3lzdGVtX3NjaGVkdWxlcyAiQXNrcyBmb3Igcm9vbSByZXNlcnZhdGlvbnMiCiAgICAgICAgdGVybV9jb250cm9sbGVyIC0+IHRlcm1fbm90aWZpZXIgIlJlcXVlc3RzIG5vdGlmaWNhdGlvbnMiCiAgICAgICAgdGVybV9ub3RpZmllciAtPiBzeXN0ZW1fbm90aWZpY2F0aW9ucyAiU2VuZHMgbm90aWZpY2F0aW9ucyBhYm91dCB0ZXJtIHVwZGF0ZXMiCiAgICAgICAgdGVybV9pbnRlcmZhY2UgLT4gc3lzdGVtX2F1dGggIkFzc3VyZXMgdXNlciBhdXRoZW50aWNpdHkiCiAgICAgICAgdGVybV9jb250cm9sbGVyIC0+IHJlc3VsdF9tYW5hZ2VyICJRdWVyaWVzIGFib3V0IHJlcXVpcmVkIGNyZWRpdHMiCgogICAgICAgIHRlcm1fY29udHJvbGxlciAtPiByZXN1bHRfaW50ZXJmYWNlICJRdWVyaWVzIGZvciByZXF1aXJlZCBjcmVkaXRzIgoKICAgICAgICAjIFRlc3RpbmcgcmVsYXRpb25zCiAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiBzZWxlbml1bV90ZXN0ICJUZXN0cyBVSSIKICAgICAgICBleGFtc193ZWJfYXBwIC0+IGFwYWNoZV9qbWV0ZXJfdGVzdCAiTG9hZCB0ZXN0aW5nIgoKICAgICAgICB0ZXJtX21hbmFnZXIgLT4ganVuaXRfbWFuYWdlcl90ZXN0ICJVbml0IHRlc3RzIGZvciBKYXZhIgogICAgICAgIHJlc3VsdF9tYW5hZ2VyIC0+IGp1bml0X21hbmFnZXJfdGVzdCAiVW5pdCB0ZXN0cyBmb3IgSmF2YSIKICAgICAgICBzdGF0c19tYW5hZ2VyIC0+IGp1bml0X21hbmFnZXJfdGVzdCAiVW5pdCB0ZXN0cyBmb3IgSmF2YSIKICAgICAgICBhZ2dyZWdhdG9yIC0+IGp1bml0X2FnZ3JlZ2F0b3JfdGVzdCAiVW5pdCB0ZXN0cyBmb3IgSmF2YSIKCiAgICAgICAgdGVybV9kYXRhYmFzZSAtPiBvcmFjbGVfZW50ZXJwcmlzZV9tYW5hZ2VyICJQZXJmb3JtYW5jZSB0ZXN0aW5nIgogICAgICAgIHN0YXRzX2RhdGFiYXNlIC0+IG9yYWNsZV9lbnRlcnByaXNlX21hbmFnZXIgIlBlcmZvcm1hbmNlIHRlc3RpbmciCiAgICAgICAgcmVzdWx0c19kYXRhYmFzZSAtPiBvcmFjbGVfZW50ZXJwcmlzZV9tYW5hZ2VyICJQZXJmb3JtYW5jZSB0ZXN0aW5nIgoKICAgICAgICB0ZXJtX2RhdGFiYXNlIC0+IG9yYWNsZV9zcWxfZGV2ZWxvcGVyICJTZWN1cml0eSB0ZXN0aW5nIgogICAgICAgIHN0YXRzX2RhdGFiYXNlIC0+IG9yYWNsZV9zcWxfZGV2ZWxvcGVyICJTZWN1cml0eSB0ZXN0aW5nIgogICAgICAgIHJlc3VsdHNfZGF0YWJhc2UgLT4gb3JhY2xlX3NxbF9kZXZlbG9wZXIgIlNlY3VyaXR5IHRlc3RpbmciCgogICAgICAgIHRlcm1fZGF0YWJhc2UgLT4gb3JhY2xlX3JtYW4gIkJhY2t1cCB0ZXN0aW5nIgogICAgICAgIHN0YXRzX2RhdGFiYXNlIC0+IG9yYWNsZV9ybWFuICJCYWNrdXAgdGVzdGluZyIKICAgICAgICByZXN1bHRzX2RhdGFiYXNlIC0+IG9yYWNsZV9ybWFuICJCYWNrdXAgdGVzdGluZyIKCiAgICAgICAgdGVybV9kYXRhYmFzZSAtPiB0b2FkX29yYWNsZSAiZnVuY3Rpb25hbCB0ZXN0aW5nIgogICAgICAgIHN0YXRzX2RhdGFiYXNlIC0+IHRvYWRfb3JhY2xlICJmdW5jdGlvbmFsIHRlc3RpbmciCiAgICAgICAgcmVzdWx0c19kYXRhYmFzZSAtPiB0b2FkX29yYWNsZSAiZnVuY3Rpb25hbCB0ZXN0aW5nIgoKICAgICAgICBkZXBsb3ltZW50RW52aXJvbm1lbnQgIkxpdmUiICAgIHsKICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIlVzZXIncyB3ZWIgYnJvd3NlciIgIiIgIiIgICAgewogICAgICAgICAgICAgICAgdXNlcl9odG1sX2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgZXhhbXNfd2ViX2FwcAogICAgICAgICAgICB9CiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJBcHBsaWNhdGlvbiBTZXJ2ZXIiICIiICJVYnVudHUgMTguMDQgTFRTIiAgIHsKICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJXZWIgc2VydmVyIiAiIiAiQXBhY2hlIFRvbWNhdCAxMC4xLjE1IiAgewogICAgICAgICAgICAgICAgICAgIHRlcm1fYXBwX2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgdGVybV9tYW5hZ2VyCiAgICAgICAgICAgICAgICAgICAgcmVzdWx0X2FwcF9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHJlc3VsdF9tYW5hZ2VyCiAgICAgICAgICAgICAgICAgICAgc3RhdHNfYXBwX2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2Ugc3RhdHNfbWFuYWdlcgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJBZ3JlZ2F0b3IgU2VydmVyIiAiIiAiVWJ1bnR1IDE4LjA0IExUUyJ7CiAgICAgICAgICAgICAgICBhZ2dyZWdhdG9yX2FwcF9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGFnZ3JlZ2F0b3IKICAgICAgICAgICAgfQogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiRGF0YWJhc2UgU2VydmVyIiAiIiAiVWJ1bnR1IDE4LjA0IExUUyIgICB7CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiUmVsYXRpb25hbCBEQiBzZXJ2ZXIiICIiICJPcmFjbGUgMTkuMS4wIiB7CiAgICAgICAgICAgICAgICAgICAgdGVybV9kYl9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHRlcm1fZGF0YWJhc2UKICAgICAgICAgICAgICAgICAgICBzdGF0c19kYl9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHN0YXRzX2RhdGFiYXNlCiAgICAgICAgICAgICAgICAgICAgcmVzdWx0c19kYl9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHJlc3VsdHNfZGF0YWJhc2UKICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIGRlcGxveW1lbnRFbnZpcm9ubWVudCAiVGVzdHMiICAgIHsKICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIlVzZXIncyB3ZWIgYnJvd3NlciIgIiIgIiIgICAgewogICAgICAgICAgICAgICAgdGVzdF91c2VyX2h0bWxfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBleGFtc193ZWJfYXBwCiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiTmF2LiBGbG93ICYgVUkgRWxlbWVudHMgVGVzdHMiICIiICJTZWxlbml1bSBXZWJEcml2ZXIiewogICAgICAgICAgICAgICAgICAgIHNlbGVuaXVtX3Rlc3RfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBzZWxlbml1bV90ZXN0CiAgICAgICAgICAgICAgICAgICAgYXBhY2hlX2ptZXRlcl90ZXN0X2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgYXBhY2hlX2ptZXRlcl90ZXN0CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkFwcGxpY2F0aW9uIFNlcnZlciIgIiIgIlVidW50dSAxOC4wNCBMVFMiICAgewogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIldlYiBzZXJ2ZXIiICIiICJBcGFjaGUgVG9tY2F0IDEwLjEuMTUiICB7CiAgICAgICAgICAgICAgICAgICAgdGVzdF90ZXJtX2FwcF9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHRlcm1fbWFuYWdlcgogICAgICAgICAgICAgICAgICAgIHRlc3RfcmVzdWx0X2FwcF9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHJlc3VsdF9tYW5hZ2VyCiAgICAgICAgICAgICAgICAgICAgdGVzdF9zdGF0c19hcHBfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBzdGF0c19tYW5hZ2VyCiAgICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIk1hbmFnZXIgVW5pdCB0ZXN0cyIgIkpVbml0IiB7CiAgICAgICAgICAgICAgICAgICAgICAgIHdlYnNlcnZlcl9qdW5pdF9tYW5hZ2VyX3Rlc3RfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBqdW5pdF9tYW5hZ2VyX3Rlc3QKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkFncmVnYXRvciBTZXJ2ZXIiICIiICJVYnVudHUgMTguMDQgTFRTInsKICAgICAgICAgICAgICAgIHRlc3RfYWdncmVnYXRvcl9hcHBfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBhZ2dyZWdhdG9yCiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQWdncmVnYXRvciBVbml0IHRlc3RzIiAiSlVuaXQiIHsKICAgICAgICAgICAgICAgICAgICAgICAgd2Vic2VydmVyX2p1bml0X21hbmFnZXJfdGVzdF9pbnN0YW5jZV9hZ3JlZ2F0b3IgPSBjb250YWluZXJJbnN0YW5jZSBqdW5pdF9hZ2dyZWdhdG9yX3Rlc3QKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkRhdGFiYXNlIFNlcnZlciIgIiIgIlVidW50dSAxOC4wNCBMVFMiICAgewogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIlJlbGF0aW9uYWwgREIgc2VydmVyIiAiIiAiT3JhY2xlIDE5LjEuMCIgewogICAgICAgICAgICAgICAgICAgIHRlc3RfdGVybV9kYl9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHRlcm1fZGF0YWJhc2UKICAgICAgICAgICAgICAgICAgICB0ZXN0X3N0YXRzX2RiX2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2Ugc3RhdHNfZGF0YWJhc2UKICAgICAgICAgICAgICAgICAgICB0ZXN0X3Jlc3VsdHNfZGJfaW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSByZXN1bHRzX2RhdGFiYXNlCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiRGF0YWJhc2UgVGVzdHMiICJPcmFjbGUgJiBUb2FkIiB7CiAgICAgICAgICAgICAgICAgICAgICAgIG9lbV90ZXN0X2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2Ugb3JhY2xlX2VudGVycHJpc2VfbWFuYWdlcgogICAgICAgICAgICAgICAgICAgICAgICBvc2RfdGVzdF9pbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIG9yYWNsZV9zcWxfZGV2ZWxvcGVyCiAgICAgICAgICAgICAgICAgICAgICAgIG9ybV90ZXN0X2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2Ugb3JhY2xlX3JtYW4KICAgICAgICAgICAgICAgICAgICAgICAgdG9hZF90ZXN0X2luc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgdG9hZF9vcmFjbGUKICAgICAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBTICJDMSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b2xheW91dCB0YgogICAgICAgIH0KCiAgICAgICAgY29udGFpbmVyIFMgIkMyIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBleGNsdWRlICJzZWxlbml1bV90ZXN0IgogICAgICAgICAgICBleGNsdWRlICJqdW5pdF9tYW5hZ2VyX3Rlc3QiCiAgICAgICAgICAgIGV4Y2x1ZGUgImFwYWNoZV9qbWV0ZXJfdGVzdCIKICAgICAgICAgICAgZXhjbHVkZSAidG9hZF9vcmFjbGUiCiAgICAgICAgICAgIGV4Y2x1ZGUgIm9yYWNsZV9lbnRlcnByaXNlX21hbmFnZXIiCiAgICAgICAgICAgIGV4Y2x1ZGUgIm9yYWNsZV9zcWxfZGV2ZWxvcGVyIgogICAgICAgICAgICBleGNsdWRlICJvcmFjbGVfcm1hbiIKICAgICAgICAgICAgZXhjbHVkZSAianVuaXRfYWdncmVnYXRvcl90ZXN0IgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IHN0YXRzX21hbmFnZXIgIkMzX3N0YXRpc3RpY3MiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICBjb21wb25lbnQgYWdncmVnYXRvciAiQzNfQWdncmVnYXRvciIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCB0ZXJtX21hbmFnZXIgIkMzX0V4YW1UZXJtTWFuYWdlciJ7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IHJlc3VsdF9tYW5hZ2VyICJDM19SZXN1bHRNYW5hZ2VyIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgZHluYW1pYyBzdGF0c19tYW5hZ2VyIHsKICAgICAgICAgICAgdGl0bGUgIlZpZXdpbmcgc3RhdGlzdGljcyIKICAgICAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiBzeXN0ZW1fYXV0aCAiVXNlciBhdXRoZW50aWNhdGVzIgogICAgICAgICAgICBleGFtc193ZWJfYXBwIC0+IHN0YXRzX2ludGVyZmFjZSAiQXBwIHJlcXVlc3RzIHN0YXRpc3RpY3MgZm9yIGdpdmVuIHF1ZXJyeSIKICAgICAgICAgICAgc3RhdHNfaW50ZXJmYWNlIC0+IHN5c3RlbV9hdXRoICJBc3N1cmVzIHRoZSB1c2VyIGlzIGF1dGhhbnRpY2F0ZWQgYW5kIGhhcyB0aGUgcmlnaHRzIgogICAgICAgICAgICBzdGF0c19pbnRlcmZhY2UgLT4gc3RhdHNfY29udHJvbGxlciAiVHJhbnNsYXRlcyBhbmQgZm9yd2FyZHMgcmVxdWVzdCIKICAgICAgICAgICAgc3RhdHNfY29udHJvbGxlciAtPiBzdGF0c19yZXBvICJSZXF1ZXN0cyBkYXRhIGZvciB0aGUgcXVlcnJ5IgogICAgICAgICAgICBzdGF0c19yZXBvIC0+IHN0YXRzX2RhdGFiYXNlICJBY2Nlc3MgdGhlIGRhdGEgaW4gdGhlIGRhdGFiYXNlIgogICAgICAgICAgICBzdGF0c19kYXRhYmFzZSAtPiBzdGF0c19yZXBvICJSZXR1cm5zIHRoZSBkYXRhIgogICAgICAgICAgICBzdGF0c19yZXBvIC0+IHN0YXRzX2NvbnRyb2xsZXIgIlJldHVybnMgdGhlIGRhdGEiCiAgICAgICAgICAgIHN0YXRzX2NvbnRyb2xsZXIgLT4gc3RhdHNfaW50ZXJmYWNlICJUcmFuc2Zvcm1zIHRoZSBkYXRhIgogICAgICAgICAgICBzdGF0c19pbnRlcmZhY2UgLT4gZXhhbXNfd2ViX2FwcCAiU2VyaWFsaXplcyBhbmQgc2VuZHMgdGhlIGRhdGEiCiAgICAgICAgfQoKICAgICAgICBkeW5hbWljIHRlcm1fbWFuYWdlciB7CiAgICAgICAgICAgIHRpdGxlICJFbnJvbGxpbmcgaW50byBhbiBleGFtIHRlcm0iCiAgICAgICAgICAgIGV4YW1zX3dlYl9hcHAgLT4gc3lzdGVtX2F1dGggIlVzZXIgYXV0aGVudGljYXRlcyIKICAgICAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiB0ZXJtX2ludGVyZmFjZSAiUmVxdWVzdCBlbnJvbGxtZW50IgogICAgICAgICAgICB0ZXJtX2ludGVyZmFjZSAtPiBzeXN0ZW1fYXV0aCAiQXNzdXJlcyB0aGUgdXNlciBpcyBhdXRoYW50aWNhdGVkIGFuZCBoYXMgdGhlIHJpZ2h0cyIKICAgICAgICAgICAgdGVybV9pbnRlcmZhY2UgLT4gdGVybV9jb250cm9sbGVyICJUcmFuc2xhdGVzIGFuZCBmb3J3YXJkcyByZXF1ZXN0IgogICAgICAgICAgICB0ZXJtX2NvbnRyb2xsZXIgLT4gdGVybV9yZXBvICJSZXF1ZXN0cyBleGFtIHRlcm0gZGF0YSIKICAgICAgICAgICAgdGVybV9yZXBvIC0+IHRlcm1fZGF0YWJhc2UgIkFjY2VzcyB0aGUgZGF0YSBpbiB0aGUgZGF0YWJhc2UiCiAgICAgICAgICAgIHRlcm1fZGF0YWJhc2UgLT4gdGVybV9yZXBvICJSZXR1cm5zIHRoZSB0ZXJtIGRhdGEiCiAgICAgICAgICAgIHRlcm1fcmVwbyAtPiB0ZXJtX2NvbnRyb2xsZXIgIlJldHVybnMgdGhlIHRlcm0gZGF0YSIKICAgICAgICAgICAgdGVybV9jb250cm9sbGVyIC0+IHJlc3VsdF9pbnRlcmZhY2UgIlF1ZXJpZXMgZm9yIHJlcXVpcmVkIGNyZWRpdHMiCiAgICAgICAgICAgIHJlc3VsdF9pbnRlcmZhY2UgLT4gdGVybV9jb250cm9sbGVyICJSZXR1cm5zIHRoZSBjcmVkaXRzIGRhdGEiCiAgICAgICAgICAgIHRlcm1fY29udHJvbGxlciAtPiB0ZXJtX3JlcG8gIldyaXRlcyBlbnJvbGxtZW50IgogICAgICAgICAgICB0ZXJtX3JlcG8gLT4gdGVybV9kYXRhYmFzZSAiV3JpdGVzIGVucm9sbG1lbnQiCiAgICAgICAgICAgIHRlcm1fZGF0YWJhc2UgLT4gdGVybV9yZXBvICJTZW5kcyBjb25maXJtYXRpb24iCiAgICAgICAgICAgIHRlcm1fcmVwbyAtPiB0ZXJtX2NvbnRyb2xsZXIgIlNlbmRzIGNvbmZpcm1hdGlvbiIKICAgICAgICAgICAgdGVybV9jb250cm9sbGVyIC0+IHRlcm1faW50ZXJmYWNlICJTZW5kcyByZXN1bHQiCiAgICAgICAgICAgIHRlcm1faW50ZXJmYWNlIC0+IGV4YW1zX3dlYl9hcHAgIlNlcmlhbGl6ZXMgYW5kIHNlbmRzIHRoZSByZXN1bHQiCiAgICAgICAgICAgIHRlcm1fY29udHJvbGxlciAtPiB0ZXJtX25vdGlmaWVyICJSZXF1ZXN0cyBub3RpZmljYXRpb24iCiAgICAgICAgICAgIHRlcm1fbm90aWZpZXIgLT4gc3lzdGVtX25vdGlmaWNhdGlvbnMgIlNlbmRzIG5vdGlmaWNhdGlvbiIKICAgICAgICB9CgogICAgICAgIGR5bmFtaWMgdGVybV9tYW5hZ2VyIHsKICAgICAgICAgICAgdGl0bGUgIkNyZWF0aW5nIGFuIGV4YW0gdGVybSIKICAgICAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiBzeXN0ZW1fYXV0aCAiVXNlciBhdXRoZW50aWNhdGVzIgogICAgICAgICAgICBleGFtc193ZWJfYXBwIC0+IHRlcm1faW50ZXJmYWNlICJSZXF1ZXN0IGV4YW0gbW9kdWxlIgogICAgICAgICAgICB0ZXJtX2ludGVyZmFjZSAtPiBzeXN0ZW1fYXV0aCAiQXNzdXJlcyB0aGUgdXNlciBpcyBhdXRoYW50aWNhdGVkIGFuZCBoYXMgdGhlIHJpZ2h0cyIKICAgICAgICAgICAgdGVybV9pbnRlcmZhY2UgLT4gc3lzdGVtX2Vucm9sbG1lbnQgIkdldCB0ZWFjaGVycyBjb3Vyc2VzIgogICAgICAgICAgICB0ZXJtX2ludGVyZmFjZSAtPiBleGFtc193ZWJfYXBwICJTaG93IGFsbCBwb3NzaWJsZSBjb3VyY2VzIHRvIHRoZSB0ZWFjaGVyIgogICAgICAgICAgICBleGFtc193ZWJfYXBwIC0+IHRlcm1faW50ZXJmYWNlICJXcml0ZSBhbGwgaW5mb3JtYXRpb24gYWJvdCB0aGUgZXhhbSIKICAgICAgICAgICAgdGVybV9pbnRlcmZhY2UgLT4gdGVybV9jb250cm9sbGVyICJUcmFuc2xhdGVzIGFuZCBmb3J3YXJkcyByZXF1ZXN0IgogICAgICAgICAgICB0ZXJtX2NvbnRyb2xsZXIgLT4gdGVybV9yZXBvICJSZXF1ZXN0cyBleGFtcyBkYXRhIgogICAgICAgICAgICB0ZXJtX3JlcG8gLT4gdGVybV9kYXRhYmFzZSAiQWNjZXNzIHRoZSBkYXRhIGluIHRoZSBkYXRhYmFzZSIKICAgICAgICAgICAgdGVybV9kYXRhYmFzZSAtPiB0ZXJtX3JlcG8gIlJldHVybnMgdGhlIGV4YW1zIGRhdGEiCiAgICAgICAgICAgIHRlcm1fcmVwbyAtPiB0ZXJtX2NvbnRyb2xsZXIgIlJldHVybnMgdGhlIHN1YmplY3RzIGRhdGEiCiAgICAgICAgICAgIHRlcm1fY29udHJvbGxlciAtPiB0ZXJtX3NjaGVkdWxlciAiUGFzcyBkYXRhIgogICAgICAgICAgICB0ZXJtX3NjaGVkdWxlciAtPiBzeXN0ZW1fc2NoZWR1bGVzICJDaGVjayBhbGwgaW5mb3JtYXRpb24iCiAgICAgICAgICAgIHRlcm1fc2NoZWR1bGVyIC0+IHRlcm1fY29udHJvbGxlciAiUmV0dXJuIHJlc3VsdCIKICAgICAgICAgICAgdGVybV9jb250cm9sbGVyIC0+IHRlcm1fcmVwbyAiV3JpdGVzIGV4YW0iCiAgICAgICAgICAgIHRlcm1fcmVwbyAtPiB0ZXJtX2RhdGFiYXNlICJXcml0ZXMgZGF0YSIKICAgICAgICAgICAgdGVybV9kYXRhYmFzZSAtPiB0ZXJtX3JlcG8gIlNlbmRzIGNvbmZpcm1hdGlvbiIKICAgICAgICAgICAgdGVybV9yZXBvIC0+IHRlcm1fY29udHJvbGxlciAiU2VuZHMgY29uZmlybWF0aW9uIgogICAgICAgICAgICB0ZXJtX2NvbnRyb2xsZXIgLT4gdGVybV9pbnRlcmZhY2UgIlNlbmRzIHJlc3VsdCIKICAgICAgICAgICAgdGVybV9pbnRlcmZhY2UgLT4gZXhhbXNfd2ViX2FwcCAiU2VyaWFsaXplcyBhbmQgc2VuZHMgdGhlIHJlc3VsdCIKICAgICAgICAgICAgdGVybV9jb250cm9sbGVyIC0+IHRlcm1fbm90aWZpZXIgIlJlcXVlc3RzIG5vdGlmaWNhdGlvbiIKICAgICAgICAgICAgdGVybV9ub3RpZmllciAtPiBzeXN0ZW1fbm90aWZpY2F0aW9ucyAiU2VuZHMgbm90aWZpY2F0aW9uIgogICAgICAgIH0KCiAgICAgICAgZHluYW1pYyByZXN1bHRfbWFuYWdlciB7CiAgICAgICAgICAgIHRpdGxlICJWaWV3aW5nIGV4YW0gcmVzdWx0cyIKICAgICAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiBzeXN0ZW1fYXV0aCAiVXNlciBhdXRoZW50aWNhdGVzIgogICAgICAgICAgICBleGFtc193ZWJfYXBwIC0+IHJlc3VsdF9pbnRlcmZhY2UgIlJlcXVlc3RzIGV4YW0gcmVzdWx0cyIKICAgICAgICAgICAgcmVzdWx0X2ludGVyZmFjZSAtPiBzeXN0ZW1fYXV0aCAiQXNzdXJlcyB0aGUgdXNlciBpcyBhdXRoYW50aWNhdGVkIGFuZCBoYXMgdGhlIHJpZ2h0cyIKICAgICAgICAgICAgcmVzdWx0X2ludGVyZmFjZSAtPiByZXN1bHRfcmV0cmlldmVyICJUcmFuc2xhdGVzIHRoZSBBUEkgcmVxdWVzdCIKICAgICAgICAgICAgcmVzdWx0X3JldHJpZXZlciAtPiByZXN1bHRfcmVwbyAiUmVxdWVzdHMgdGhlIGV4YW0gcmVzdWx0IGRhdGEiCiAgICAgICAgICAgIHJlc3VsdF9yZXBvIC0+IHJlc3VsdHNfZGF0YWJhc2UgIlF1ZXJpZXMgdGhlIEV4YW0gREIiCiAgICAgICAgICAgIHJlc3VsdHNfZGF0YWJhc2UgLT4gcmVzdWx0X3JlcG8gICJSZXRyaWV2ZXMgdGhlIGRhdGEgZnJvbSBFeGFtIERCIgogICAgICAgICAgICByZXN1bHRfcmVwbyAtPiByZXN1bHRfcmV0cmlldmVyICJGb3J3YXJkcyB0aGUgZGF0YSIKICAgICAgICAgICAgcmVzdWx0X3JldHJpZXZlciAtPiByZXN1bHRfaW50ZXJmYWNlICJSZXNvbHZlcyB0aGUgQVBJIHJlcXVlc3QiCiAgICAgICAgICAgIHJlc3VsdF9pbnRlcmZhY2UgLT4gZXhhbXNfd2ViX2FwcCAiU2VyaWFsaXplcyBhbmQgc2VuZHMgcmVzdWx0cyIKCgogICAgICAgIH0KCiAgICAgICAgZHluYW1pYyByZXN1bHRfbWFuYWdlciB7CiAgICAgICAgICAgIHRpdGxlICJVcGRhdGluZyBleGFtIHJlc3VsdHMiCiAgICAgICAgICAgIGV4YW1zX3dlYl9hcHAgLT4gc3lzdGVtX2F1dGggIlVzZXIgYXV0aGVudGljYXRlcyIKICAgICAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiByZXN1bHRfaW50ZXJmYWNlICJSZXF1ZXN0cyBleGFtIHJlc3VsdHMiCiAgICAgICAgICAgIHJlc3VsdF9pbnRlcmZhY2UgLT4gc3lzdGVtX2F1dGggIkFzc3VyZXMgdGhlIHVzZXIgaXMgYXV0aGFudGljYXRlZCBhbmQgaGFzIHRoZSByaWdodHMiCiAgICAgICAgICAgIHJlc3VsdF9pbnRlcmZhY2UgLT4gcmVzdWx0X3Byb2Nlc3NvciAiVHJhbnNsYXRlcyB0aGUgQVBJIHJlcXVlc3QiCiAgICAgICAgICAgIHJlc3VsdF9wcm9jZXNzb3IgLT4gcmVzdWx0X3JlcG8gIlJlcXVlc3RzIHRoZSBtb2RpZmljYXRpb24gb2YgZXhhbSByZXN1bHQiCiAgICAgICAgICAgIHJlc3VsdF9yZXBvIC0+IHJlc3VsdHNfZGF0YWJhc2UgIk1vZGlmaWVzIHRoZSBleGFtIHJlc3VsdHMiCiAgICAgICAgICAgIHJlc3VsdF9yZXBvIC0+IHJlc3VsdF9wcm9jZXNzb3IgIkhUVFAgMjAwIE9LIgogICAgICAgICAgICByZXN1bHRfcHJvY2Vzc29yIC0+IHJlc3VsdF9ub3RpZmllciAiUmVxdWVzdHMgbm90aWZpY2F0aW9uIHRoYXQgZXhhbSByZXN1bHQgaGF2ZSBiZWVlbiBjaGFuZ2VkIgogICAgICAgICAgICByZXN1bHRfbm90aWZpZXIgLT4gc3lzdGVtX25vdGlmaWNhdGlvbnMgIlNlbmRzIHRoZSBub3RpZmljYXRpb24iCiAgICAgICAgICAgIHJlc3VsdF9wcm9jZXNzb3IgLT4gcmVzdWx0X2ludGVyZmFjZSAiQ29uZmlybXMgdGhlIHRyYW5zYWN0aW9uIgogICAgICAgICAgICByZXN1bHRfaW50ZXJmYWNlIC0+IGV4YW1zX3dlYl9hcHAgIkNvbmZpcm1zIHRoZSB0cmFuc2FjdGlvbiB0byB0aGUgdXNlciIKCgoKICAgICAgICB9CgogICAgICAgIGR5bmFtaWMgcmVzdWx0X21hbmFnZXIgewogICAgICAgICAgICB0aXRsZSAiR3JhbnRpbmcgY291cnNlIGNyZWRpdHMiCiAgICAgICAgICAgIGV4YW1zX3dlYl9hcHAgLT4gc3lzdGVtX2F1dGggIlVzZXIgYXV0aGVudGljYXRlcyIKICAgICAgICAgICAgZXhhbXNfd2ViX2FwcCAtPiByZXN1bHRfaW50ZXJmYWNlICJSZXF1ZXN0cyB0ZWFjaGVyJ3Mgc3ViamVjdHMiCiAgICAgICAgICAgIHJlc3VsdF9pbnRlcmZhY2UgLT4gc3lzdGVtX2F1dGggIkFzc3VyZXMgdGhlIHVzZXIgaXMgYXV0aGVudGljYXRlZCBhbmQgaGFzIHRoZSByaWdodHMiCiAgICAgICAgICAgIHJlc3VsdF9pbnRlcmZhY2UgLT4gcmVzdWx0X3JldHJpZXZlciAiUmV0cmlldmVzIHRoZSBsaXN0IG9mIHRlYWNoZXIncyBzdWJqZWN0cyBhbmQgc3R1ZGVudHMiCiAgICAgICAgICAgIHJlc3VsdF9yZXRyaWV2ZXIgLT4gcmVzdWx0X3JlcG8gIlF1ZXJpZXMgZGF0YSBmb3IgdGVhY2hlcidzIHN1YmplY3RzIGFuZCBzdHVkZW50cyIKICAgICAgICAgICAgcmVzdWx0X3JlcG8gLT4gcmVzdWx0c19kYXRhYmFzZSAiQWNjZXNzZXMgc3ViamVjdHMgYW5kIHN0dWRlbnRzIGRhdGEiCiAgICAgICAgICAgIHJlc3VsdHNfZGF0YWJhc2UgLT4gcmVzdWx0X3JlcG8gIlJldHVybnMgc3ViamVjdHMgYW5kIHN0dWRlbnRzIGRhdGEiCiAgICAgICAgICAgIHJlc3VsdF9yZXBvIC0+IHJlc3VsdF9yZXRyaWV2ZXIgIlJldHVybnMgc3ViamVjdHMgYW5kIHN0dWRlbnRzIGRhdGEiCiAgICAgICAgICAgIHJlc3VsdF9yZXRyaWV2ZXIgLT4gcmVzdWx0X2ludGVyZmFjZSAiUmVzb2x2ZXMgZGF0YSByZXRyaWV2YWwiCiAgICAgICAgICAgIHJlc3VsdF9pbnRlcmZhY2UgLT4gZXhhbXNfd2ViX2FwcCAiRGlzcGxheXMgdGhlIGxpc3Qgb2Ygc3ViamVjdHMgYW5kIHN0dWRlbnRzIgogICAgICAgICAgICBleGFtc193ZWJfYXBwIC0+IHJlc3VsdF9pbnRlcmZhY2UgIlJlcXVlc3RzIHRvIGdyYW50IGNyZWRpdCB0byBzZWxlY3RlZCBzdHVkZW50cyIKICAgICAgICAgICAgcmVzdWx0X2ludGVyZmFjZSAtPiByZXN1bHRfcHJvY2Vzc29yICJQcm9jZXNzZXMgdGhlIGNyZWRpdCBncmFudGluZyByZXF1ZXN0IgogICAgICAgICAgICByZXN1bHRfcHJvY2Vzc29yIC0+IHJlc3VsdF9yZXBvICJSZXF1ZXN0cyB0aGUgdXBkYXRlIG9mIGNyZWRpdCBzdGF0dXMiCiAgICAgICAgICAgIHJlc3VsdF9yZXBvIC0+IHJlc3VsdHNfZGF0YWJhc2UgIk1vZGlmaWVzIHRoZSBjcmVkaXQgZGF0YSIKICAgICAgICAgICAgcmVzdWx0c19kYXRhYmFzZSAtPiByZXN1bHRfcmVwbyAiQ29uZmlybXMgdGhlIG1vZGlmaWNhdGlvbiIKICAgICAgICAgICAgcmVzdWx0X3JlcG8gLT4gcmVzdWx0X3Byb2Nlc3NvciAiUmV0dXJucyB1cGRhdGUgY29uZmlybWF0aW9uIgogICAgICAgICAgICByZXN1bHRfcHJvY2Vzc29yIC0+IHJlc3VsdF9ub3RpZmllciAiUmVxdWVzdHMgbm90aWZpY2F0aW9uIGFib3V0IGNyZWRpdCBzdGF0dXMgdXBkYXRlIgogICAgICAgICAgICByZXN1bHRfbm90aWZpZXIgLT4gc3lzdGVtX25vdGlmaWNhdGlvbnMgIlNlbmRzIG5vdGlmaWNhdGlvbiB0byBhZmZlY3RlZCBzdHVkZW50cyIKICAgICAgICAgICAgcmVzdWx0X3Byb2Nlc3NvciAtPiByZXN1bHRfaW50ZXJmYWNlICJDb25maXJtcyB0aGUgdXBkYXRlIgogICAgICAgICAgICByZXN1bHRfaW50ZXJmYWNlIC0+IGV4YW1zX3dlYl9hcHAgIkRpc3BsYXlzIGNvbmZpcm1hdGlvbiB0byB0aGUgdGVhY2hlciIKCiAgICAgICAgfQoKICAgICAgICBkZXBsb3ltZW50IFMgIkxpdmUiICJMaXZlX0RlcGxveW1lbnQiICAgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgogICAgICAgIGRlcGxveW1lbnQgUyAiVGVzdHMiICJEZXZlbG9wbWVudF9EZXBsb3ltZW50IiAgIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGV4Y2x1ZGUgImV4YW1zX3dlYl9hcHAgLT4gdGVybV9tYW5hZ2VyIgogICAgICAgICAgICBleGNsdWRlICJleGFtc193ZWJfYXBwIC0+IHJlc3VsdF9tYW5hZ2VyIgogICAgICAgICAgICBleGNsdWRlICJleGFtc193ZWJfYXBwIC0+IHN0YXRzX21hbmFnZXIiCgogICAgICAgICAgICBleGNsdWRlICJ0ZXJtX21hbmFnZXIgLT4gdGVybV9kYXRhYmFzZSIKICAgICAgICAgICAgZXhjbHVkZSAicmVzdWx0X21hbmFnZXIgLT4gcmVzdWx0c19kYXRhYmFzZSIKICAgICAgICAgICAgZXhjbHVkZSAic3RhdHNfbWFuYWdlciAtPiBzdGF0c19kYXRhYmFzZSIKCiAgICAgICAgICAgIGV4Y2x1ZGUgImFnZ3JlZ2F0b3IgLT4gc3RhdHNfZGF0YWJhc2UiCgogICAgICAgICAgICBleGNsdWRlICJhZ2dyZWdhdG9yIC0+IHJlc3VsdHNfZGF0YWJhc2UiCiAgICAgICAgICAgIGV4Y2x1ZGUgInRlcm1fbWFuYWdlciAtPiByZXN1bHRfbWFuYWdlciIKCiAgICAgICAgfQoKICAgICAgICB0aGVtZSBkZWZhdWx0CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIkV4aXN0aW5nIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjOTk5OTk5CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIldlYiBGcm9udC1FbmQiICB7CiAgICAgICAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiAgewogICAgICAgICAgICAgICAgc2hhcGUgQ3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQ=="
+  },
+  "views" : {
+    "componentViews" : [ {
+      "containerId" : "14",
+      "dimensions" : {
+        "height" : 1325,
+        "width" : 2550
+      },
+      "elements" : [ {
+        "id" : "15",
+        "x" : 240,
+        "y" : 660
+      }, {
+        "id" : "16",
+        "x" : 1050,
+        "y" : 655
+      }, {
+        "id" : "17",
+        "x" : 1860,
+        "y" : 660
+      }, {
+        "id" : "25",
+        "x" : 1860,
+        "y" : 200
+      }, {
+        "id" : "26",
+        "x" : 240,
+        "y" : 200
+      }, {
+        "id" : "38",
+        "x" : 1050,
+        "y" : 200
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "C3_statistics",
+      "order" : 3,
+      "relationships" : [ {
+        "id" : "39"
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "51"
+      } ]
+    }, {
+      "containerId" : "18",
+      "dimensions" : {
+        "height" : 2500,
+        "width" : 2410
+      },
+      "elements" : [ {
+        "id" : "19",
+        "x" : 239,
+        "y" : 744
+      }, {
+        "id" : "20",
+        "x" : 239,
+        "y" : 1349
+      }, {
+        "id" : "21",
+        "x" : 979,
+        "y" : 1349
+      }, {
+        "id" : "22",
+        "x" : 1719,
+        "y" : 1349
+      }, {
+        "id" : "24",
+        "x" : 239,
+        "y" : 1999
+      }, {
+        "id" : "25",
+        "x" : 1719,
+        "y" : 1999
+      }, {
+        "id" : "81",
+        "x" : 264,
+        "y" : 199
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "C3_Aggregator",
+      "order" : 4,
+      "relationships" : [ {
+        "id" : "65"
+      }, {
+        "id" : "66"
+      }, {
+        "id" : "68"
+      }, {
+        "id" : "69"
+      }, {
+        "id" : "71"
+      }, {
+        "id" : "72"
+      }, {
+        "id" : "90"
+      } ]
+    }, {
+      "containerId" : "2",
+      "dimensions" : {
+        "height" : 4288,
+        "width" : 3950
+      },
+      "elements" : [ {
+        "id" : "3",
+        "x" : 988,
+        "y" : 1583
+      }, {
+        "id" : "4",
+        "x" : 1738,
+        "y" : 1583
+      }, {
+        "id" : "5",
+        "x" : 2488,
+        "y" : 1283
+      }, {
+        "id" : "6",
+        "x" : 2485,
+        "y" : 2020
+      }, {
+        "id" : "7",
+        "x" : 2488,
+        "y" : 670
+      }, {
+        "id" : "8",
+        "x" : 1679,
+        "y" : 2652
+      }, {
+        "id" : "23",
+        "x" : 3238,
+        "y" : 670
+      }, {
+        "id" : "26",
+        "x" : 224,
+        "y" : 2677
+      }, {
+        "id" : "35",
+        "x" : 3238,
+        "y" : 1283
+      }, {
+        "id" : "36",
+        "x" : 3224,
+        "y" : 2632
+      }, {
+        "id" : "37",
+        "x" : 3238,
+        "y" : 2191
+      }, {
+        "id" : "38",
+        "x" : 3274,
+        "y" : 3357
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "C3_ExamTermManager",
+      "order" : 5,
+      "relationships" : [ {
+        "id" : "100"
+      }, {
+        "id" : "101",
+        "vertices" : [ {
+          "x" : 1370,
+          "y" : 3180
+        } ]
+      }, {
+        "id" : "102",
+        "vertices" : [ {
+          "x" : 1969,
+          "y" : 2022
+        } ]
+      }, {
+        "id" : "47",
+        "vertices" : [ {
+          "x" : 1554,
+          "y" : 2792
+        } ]
+      }, {
+        "id" : "50",
+        "vertices" : [ {
+          "x" : 464,
+          "y" : 1742
+        } ]
+      }, {
+        "id" : "51",
+        "vertices" : [ {
+          "x" : 439,
+          "y" : 3447
+        } ]
+      }, {
+        "id" : "62",
+        "vertices" : [ {
+          "x" : 3034,
+          "y" : 3047
+        }, {
+          "x" : 3464,
+          "y" : 3112
+        } ]
+      }, {
+        "id" : "63"
+      }, {
+        "id" : "64"
+      }, {
+        "id" : "92"
+      }, {
+        "id" : "93",
+        "vertices" : [ {
+          "x" : 1504,
+          "y" : 1977
+        } ]
+      }, {
+        "id" : "94",
+        "vertices" : [ {
+          "x" : 1379,
+          "y" : 2362
+        }, {
+          "x" : 2834,
+          "y" : 2742
+        } ]
+      }, {
+        "id" : "95",
+        "vertices" : [ {
+          "x" : 2384,
+          "y" : 1104
+        } ]
+      }, {
+        "id" : "96"
+      }, {
+        "id" : "97"
+      }, {
+        "id" : "98"
+      }, {
+        "id" : "99"
+      } ]
+    }, {
+      "containerId" : "8",
+      "dimensions" : {
+        "height" : 2937,
+        "width" : 3866
+      },
+      "elements" : [ {
+        "id" : "2",
+        "x" : 210,
+        "y" : 1685
+      }, {
+        "id" : "9",
+        "x" : 958,
+        "y" : 1645
+      }, {
+        "id" : "10",
+        "x" : 1708,
+        "y" : 1645
+      }, {
+        "id" : "11",
+        "x" : 1708,
+        "y" : 1045
+      }, {
+        "id" : "12",
+        "x" : 2458,
+        "y" : 1645
+      }, {
+        "id" : "13",
+        "x" : 2458,
+        "y" : 433
+      }, {
+        "id" : "24",
+        "x" : 3208,
+        "y" : 433
+      }, {
+        "id" : "26",
+        "x" : 205,
+        "y" : 2250
+      }, {
+        "id" : "37",
+        "x" : 3208,
+        "y" : 2258
+      }, {
+        "id" : "38",
+        "x" : 1708,
+        "y" : 2262
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "C3_ResultManager",
+      "order" : 6,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "id" : "105"
+      }, {
+        "id" : "46"
+      }, {
+        "id" : "51"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "58",
+        "vertices" : [ {
+          "x" : 100,
+          "y" : 1995
+        }, {
+          "x" : 110,
+          "y" : 2775
+        }, {
+          "x" : 2310,
+          "y" : 2730
+        } ]
+      }, {
+        "id" : "60",
+        "vertices" : [ {
+          "x" : 905,
+          "y" : 2265
+        } ]
+      }, {
+        "id" : "73"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "75",
+        "vertices" : [ {
+          "x" : 2158,
+          "y" : 1495
+        }, {
+          "x" : 2354,
+          "y" : 866
+        } ]
+      }, {
+        "id" : "76"
+      }, {
+        "id" : "77"
+      }, {
+        "id" : "78"
+      }, {
+        "id" : "79"
+      }, {
+        "id" : "80"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "Development_Deployment",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#999999",
+          "color" : "#ffffff",
+          "tag" : "Existing System"
+        }, {
+          "shape" : "WebBrowser",
+          "tag" : "Web Front-End"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        } ]
+      },
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+    },
+    "containerViews" : [ {
+      "dimensions" : {
+        "height" : 2876,
+        "width" : 3938
+      },
+      "elements" : [ {
+        "id" : "2",
+        "x" : 880,
+        "y" : 1356
+      }, {
+        "id" : "8",
+        "x" : 1676,
+        "y" : 1356
+      }, {
+        "id" : "14",
+        "x" : 3268,
+        "y" : 1356
+      }, {
+        "id" : "18",
+        "x" : 2472,
+        "y" : 1356
+      }, {
+        "id" : "23",
+        "x" : 700,
+        "y" : 1896
+      }, {
+        "id" : "24",
+        "x" : 2295,
+        "y" : 1896
+      }, {
+        "id" : "25",
+        "x" : 3268,
+        "y" : 1896
+      }, {
+        "id" : "26",
+        "x" : 1440,
+        "y" : 825
+      }, {
+        "id" : "35",
+        "x" : 200,
+        "y" : 1356
+      }, {
+        "id" : "36",
+        "x" : 1165,
+        "y" : 2376
+      }, {
+        "id" : "37",
+        "x" : 1795,
+        "y" : 2376
+      }, {
+        "id" : "38",
+        "x" : 3268,
+        "y" : 365
+      }, {
+        "id" : "81",
+        "x" : 1960,
+        "y" : 200
+      }, {
+        "id" : "82",
+        "x" : 990,
+        "y" : 200
+      }, {
+        "id" : "83",
+        "x" : 1475,
+        "y" : 200
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "C2",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "103"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "46"
+      }, {
+        "id" : "47"
+      }, {
+        "id" : "49"
+      }, {
+        "id" : "51"
+      }, {
+        "id" : "53"
+      }, {
+        "id" : "54"
+      }, {
+        "id" : "56"
+      }, {
+        "id" : "58",
+        "vertices" : [ {
+          "x" : 1815,
+          "y" : 1946
+        } ]
+      }, {
+        "id" : "60"
+      }, {
+        "id" : "61"
+      }, {
+        "id" : "62",
+        "vertices" : [ {
+          "x" : 1530,
+          "y" : 1916
+        } ]
+      }, {
+        "id" : "63"
+      }, {
+        "id" : "64"
+      }, {
+        "id" : "67"
+      }, {
+        "id" : "70"
+      }, {
+        "id" : "84"
+      }, {
+        "id" : "86"
+      }, {
+        "id" : "88"
+      }, {
+        "id" : "91"
+      } ],
+      "softwareSystemId" : "1"
+    } ],
+    "deploymentViews" : [ {
+      "dimensions" : {
+        "height" : 2298,
+        "width" : 3061
+      },
+      "elements" : [ {
+        "id" : "124",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "125",
+        "x" : 989,
+        "y" : 219
+      }, {
+        "id" : "126",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "127",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "128",
+        "x" : 239,
+        "y" : 865
+      }, {
+        "id" : "130",
+        "x" : 949,
+        "y" : 865
+      }, {
+        "id" : "133",
+        "x" : 1660,
+        "y" : 865
+      }, {
+        "id" : "135",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "136",
+        "x" : 2390,
+        "y" : 1070
+      }, {
+        "id" : "137",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "138",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "139",
+        "x" : 239,
+        "y" : 1615
+      }, {
+        "id" : "141",
+        "x" : 1660,
+        "y" : 1615
+      }, {
+        "id" : "144",
+        "x" : 949,
+        "y" : 1615
+      } ],
+      "environment" : "Live",
+      "key" : "Live_Deployment",
+      "order" : 13,
+      "relationships" : [ {
+        "id" : "129",
+        "vertices" : [ {
+          "x" : 839,
+          "y" : 656
+        } ]
+      }, {
+        "id" : "131"
+      }, {
+        "id" : "132"
+      }, {
+        "id" : "134"
+      }, {
+        "id" : "140"
+      }, {
+        "id" : "142"
+      }, {
+        "id" : "143"
+      }, {
+        "id" : "145"
+      }, {
+        "id" : "146"
+      } ],
+      "softwareSystemId" : "1"
+    }, {
+      "dimensions" : {
+        "height" : 1870,
+        "width" : 8308
+      },
+      "elements" : [ {
+        "id" : "147",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "148",
+        "x" : 808,
+        "y" : 433
+      }, {
+        "id" : "149",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "150",
+        "x" : 1183,
+        "y" : 1033
+      }, {
+        "id" : "152",
+        "x" : 433,
+        "y" : 1033
+      }, {
+        "id" : "154",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "155",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "156",
+        "x" : 2833,
+        "y" : 433
+      }, {
+        "id" : "158",
+        "x" : 2083,
+        "y" : 433
+      }, {
+        "id" : "161",
+        "x" : 3583,
+        "y" : 433
+      }, {
+        "id" : "163",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "164",
+        "x" : 2835,
+        "y" : 1275
+      }, {
+        "id" : "168",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "169",
+        "x" : 4379,
+        "y" : 433
+      }, {
+        "id" : "170",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "171",
+        "x" : 4315,
+        "y" : 1155
+      }, {
+        "id" : "173",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "174",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "175",
+        "x" : 5550,
+        "y" : 433
+      }, {
+        "id" : "177",
+        "x" : 7050,
+        "y" : 433
+      }, {
+        "id" : "180",
+        "x" : 6300,
+        "y" : 433
+      }, {
+        "id" : "183",
+        "x" : 175,
+        "y" : 175
+      }, {
+        "id" : "184",
+        "x" : 5925,
+        "y" : 1033
+      }, {
+        "id" : "188",
+        "x" : 5175,
+        "y" : 1033
+      }, {
+        "id" : "192",
+        "x" : 7425,
+        "y" : 1033
+      }, {
+        "id" : "196",
+        "x" : 6675,
+        "y" : 1033
+      } ],
+      "environment" : "Tests",
+      "key" : "Development_Deployment",
+      "order" : 14,
+      "paperSize" : "A1_Landscape",
+      "relationships" : [ {
+        "id" : "151"
+      }, {
+        "id" : "153"
+      }, {
+        "id" : "165"
+      }, {
+        "id" : "166"
+      }, {
+        "id" : "167"
+      }, {
+        "id" : "172"
+      }, {
+        "id" : "185"
+      }, {
+        "id" : "186",
+        "vertices" : [ {
+          "x" : 6900,
+          "y" : 837
+        }, {
+          "x" : 6525,
+          "y" : 929
+        } ]
+      }, {
+        "id" : "187"
+      }, {
+        "id" : "189"
+      }, {
+        "id" : "190",
+        "vertices" : [ {
+          "x" : 6900,
+          "y" : 837
+        }, {
+          "x" : 5775,
+          "y" : 929
+        } ]
+      }, {
+        "id" : "191",
+        "vertices" : [ {
+          "x" : 6150,
+          "y" : 837
+        }, {
+          "x" : 5775,
+          "y" : 929
+        } ]
+      }, {
+        "id" : "193",
+        "vertices" : [ {
+          "x" : 6150,
+          "y" : 837
+        }, {
+          "x" : 7275,
+          "y" : 929
+        } ]
+      }, {
+        "id" : "194"
+      }, {
+        "id" : "195",
+        "vertices" : [ {
+          "x" : 6900,
+          "y" : 837
+        }, {
+          "x" : 7275,
+          "y" : 929
+        } ]
+      }, {
+        "id" : "197",
+        "vertices" : [ {
+          "x" : 6150,
+          "y" : 837
+        }, {
+          "x" : 6525,
+          "y" : 929
+        } ]
+      }, {
+        "id" : "198"
+      }, {
+        "id" : "199"
+      } ],
+      "softwareSystemId" : "1"
+    } ],
+    "dynamicViews" : [ {
+      "dimensions" : {
+        "height" : 1507,
+        "width" : 3140
+      },
+      "elementId" : "14",
+      "elements" : [ {
+        "id" : "15",
+        "x" : 240,
+        "y" : 841
+      }, {
+        "id" : "16",
+        "x" : 990,
+        "y" : 841
+      }, {
+        "id" : "17",
+        "x" : 1740,
+        "y" : 841
+      }, {
+        "id" : "25",
+        "x" : 2490,
+        "y" : 841
+      }, {
+        "id" : "26",
+        "x" : 240,
+        "y" : 199
+      }, {
+        "id" : "38",
+        "x" : 990,
+        "y" : 199
+      } ],
+      "externalBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Dynamic-001",
+      "order" : 7,
+      "relationships" : [ {
+        "description" : "User authenticates",
+        "id" : "51",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "App requests statistics for given querry",
+        "id" : "48",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 335,
+          "y" : 669
+        } ]
+      }, {
+        "description" : "Assures the user is authanticated and has the rights",
+        "id" : "39",
+        "order" : "3",
+        "response" : false
+      }, {
+        "description" : "Translates and forwards request",
+        "id" : "42",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 840,
+          "y" : 1141
+        } ]
+      }, {
+        "description" : "Requests data for the querry",
+        "id" : "43",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1590,
+          "y" : 1141
+        } ]
+      }, {
+        "description" : "Access the data in the database",
+        "id" : "44",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2340,
+          "y" : 1141
+        } ]
+      }, {
+        "description" : "Returns the data",
+        "id" : "44",
+        "order" : "7",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2340,
+          "y" : 841
+        } ]
+      }, {
+        "description" : "Returns the data",
+        "id" : "43",
+        "order" : "8",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1590,
+          "y" : 841
+        } ]
+      }, {
+        "description" : "Transforms the data",
+        "id" : "42",
+        "order" : "9",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 840,
+          "y" : 841
+        } ]
+      }, {
+        "description" : "Serializes and sends the data",
+        "id" : "48",
+        "order" : "10",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 620,
+          "y" : 669
+        } ]
+      } ],
+      "title" : "Viewing statistics"
+    }, {
+      "dimensions" : {
+        "height" : 2267,
+        "width" : 3140
+      },
+      "elementId" : "2",
+      "elements" : [ {
+        "id" : "3",
+        "x" : 240,
+        "y" : 852
+      }, {
+        "id" : "4",
+        "x" : 990,
+        "y" : 240
+      }, {
+        "id" : "6",
+        "x" : 1740,
+        "y" : 240
+      }, {
+        "id" : "7",
+        "x" : 1740,
+        "y" : 852
+      }, {
+        "id" : "9",
+        "x" : 1740,
+        "y" : 1465
+      }, {
+        "id" : "23",
+        "x" : 2490,
+        "y" : 852
+      }, {
+        "id" : "26",
+        "x" : 240,
+        "y" : 1465
+      }, {
+        "id" : "37",
+        "x" : 2490,
+        "y" : 240
+      }, {
+        "id" : "38",
+        "x" : 990,
+        "y" : 1465
+      } ],
+      "externalBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Dynamic-002",
+      "order" : 8,
+      "relationships" : [ {
+        "description" : "User authenticates",
+        "id" : "51",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "Request enrollment",
+        "id" : "50",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 375,
+          "y" : 1330
+        } ]
+      }, {
+        "description" : "Assures the user is authanticated and has the rights",
+        "id" : "101",
+        "order" : "3",
+        "response" : false
+      }, {
+        "description" : "Translates and forwards request",
+        "id" : "92",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 934,
+          "y" : 812
+        } ]
+      }, {
+        "description" : "Requests exam term data",
+        "id" : "95",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1540,
+          "y" : 970
+        } ]
+      }, {
+        "description" : "Access the data in the database",
+        "id" : "96",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2340,
+          "y" : 1152
+        } ]
+      }, {
+        "description" : "Returns the term data",
+        "id" : "96",
+        "order" : "7",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2340,
+          "y" : 852
+        } ]
+      }, {
+        "description" : "Returns the term data",
+        "id" : "95",
+        "order" : "8",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1615,
+          "y" : 860
+        } ]
+      }, {
+        "description" : "Queries for required credits",
+        "id" : "104",
+        "order" : "9",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1570,
+          "y" : 1190
+        } ]
+      }, {
+        "description" : "Returns the credits data",
+        "id" : "104",
+        "order" : "10",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1385,
+          "y" : 1245
+        } ]
+      }, {
+        "description" : "Writes enrollment",
+        "id" : "95",
+        "order" : "11",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1725,
+          "y" : 755
+        } ]
+      }, {
+        "description" : "Writes enrollment",
+        "id" : "96",
+        "order" : "12",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2340,
+          "y" : 1302
+        } ]
+      }, {
+        "description" : "Sends confirmation",
+        "id" : "96",
+        "order" : "13",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2340,
+          "y" : 702
+        } ]
+      }, {
+        "description" : "Sends confirmation",
+        "id" : "95",
+        "order" : "14",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1855,
+          "y" : 670
+        } ]
+      }, {
+        "description" : "Sends result",
+        "id" : "92",
+        "order" : "15",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 745,
+          "y" : 579
+        } ]
+      }, {
+        "description" : "Serializes and sends the result",
+        "id" : "50",
+        "order" : "16",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 575,
+          "y" : 1315
+        } ]
+      }, {
+        "description" : "Requests notification",
+        "id" : "99",
+        "order" : "17",
+        "response" : false
+      }, {
+        "description" : "Sends notification",
+        "id" : "100",
+        "order" : "18",
+        "response" : false
+      } ],
+      "title" : "Enrolling into an exam term"
+    }, {
+      "dimensions" : {
+        "height" : 3665,
+        "width" : 3640
+      },
+      "elementId" : "2",
+      "elements" : [ {
+        "id" : "3",
+        "x" : 635,
+        "y" : 1280
+      }, {
+        "id" : "4",
+        "x" : 1455,
+        "y" : 360
+      }, {
+        "id" : "5",
+        "x" : 1305,
+        "y" : 1190
+      }, {
+        "id" : "6",
+        "x" : 2230,
+        "y" : 370
+      }, {
+        "id" : "7",
+        "x" : 2070,
+        "y" : 1645
+      }, {
+        "id" : "23",
+        "x" : 2895,
+        "y" : 1440
+      }, {
+        "id" : "26",
+        "x" : 370,
+        "y" : 2200
+      }, {
+        "id" : "35",
+        "x" : 2945,
+        "y" : 2080
+      }, {
+        "id" : "36",
+        "x" : 2930,
+        "y" : 3055
+      }, {
+        "id" : "37",
+        "x" : 2929,
+        "y" : 369
+      }, {
+        "id" : "38",
+        "x" : 2945,
+        "y" : 2475
+      } ],
+      "externalBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Dynamic-003",
+      "order" : 9,
+      "relationships" : [ {
+        "description" : "User authenticates",
+        "id" : "51",
+        "order" : "1",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 590,
+          "y" : 2840
+        }, {
+          "x" : 3170,
+          "y" : 2875
+        } ]
+      }, {
+        "description" : "Request exam module",
+        "id" : "50",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 235,
+          "y" : 2365
+        }, {
+          "x" : 240,
+          "y" : 1455
+        } ]
+      }, {
+        "description" : "Assures the user is authanticated and has the rights",
+        "id" : "101",
+        "order" : "3",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1240,
+          "y" : 1860
+        }, {
+          "x" : 1270,
+          "y" : 2600
+        } ]
+      }, {
+        "description" : "Get teachers courses",
+        "id" : "93",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1455,
+          "y" : 1750
+        }, {
+          "x" : 1465,
+          "y" : 3175
+        } ]
+      }, {
+        "description" : "Show all possible cources to the teacher",
+        "id" : "50",
+        "order" : "5",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1085,
+          "y" : 1860
+        }, {
+          "x" : 1120,
+          "y" : 2325
+        } ]
+      }, {
+        "description" : "Write all information abot the exam",
+        "id" : "50",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 380,
+          "y" : 2095
+        }, {
+          "x" : 415,
+          "y" : 1590
+        } ]
+      }, {
+        "description" : "Translates and forwards request",
+        "id" : "92",
+        "order" : "7",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 920,
+          "y" : 545
+        } ]
+      }, {
+        "description" : "Requests exams data",
+        "id" : "95",
+        "order" : "8",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2140,
+          "y" : 1115
+        } ]
+      }, {
+        "description" : "Access the data in the database",
+        "id" : "96",
+        "order" : "9",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2620,
+          "y" : 1970
+        }, {
+          "x" : 3140,
+          "y" : 1950
+        } ]
+      }, {
+        "description" : "Returns the exams data",
+        "id" : "96",
+        "order" : "10",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 3110,
+          "y" : 1320
+        }, {
+          "x" : 2655,
+          "y" : 1345
+        } ]
+      }, {
+        "description" : "Returns the subjects data",
+        "id" : "95",
+        "order" : "11",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2400,
+          "y" : 1025
+        } ]
+      }, {
+        "description" : "Pass data",
+        "id" : "97",
+        "order" : "12",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1457,
+          "y" : 898
+        } ]
+      }, {
+        "description" : "Check all information",
+        "id" : "98",
+        "order" : "13",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1700,
+          "y" : 2220
+        } ]
+      }, {
+        "description" : "Return result",
+        "id" : "97",
+        "order" : "14",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1685,
+          "y" : 930
+        } ]
+      }, {
+        "description" : "Writes exam",
+        "id" : "95",
+        "order" : "15",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1985,
+          "y" : 1175
+        } ]
+      }, {
+        "description" : "Writes data",
+        "id" : "96",
+        "order" : "16",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3010,
+          "y" : 1860
+        } ]
+      }, {
+        "description" : "Sends confirmation",
+        "id" : "96",
+        "order" : "17",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2720,
+          "y" : 1470
+        } ]
+      }, {
+        "description" : "Sends confirmation",
+        "id" : "95",
+        "order" : "18",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2560,
+          "y" : 970
+        } ]
+      }, {
+        "description" : "Sends result",
+        "id" : "92",
+        "order" : "19",
+        "response" : true
+      }, {
+        "description" : "Serializes and sends the result",
+        "id" : "50",
+        "order" : "20",
+        "response" : true
+      }, {
+        "description" : "Requests notification",
+        "id" : "99",
+        "order" : "21",
+        "response" : false
+      }, {
+        "description" : "Sends notification",
+        "id" : "100",
+        "order" : "22",
+        "response" : false
+      } ],
+      "title" : "Creating an exam term"
+    }, {
+      "dimensions" : {
+        "height" : 2548,
+        "width" : 3280
+      },
+      "elementId" : "8",
+      "elements" : [ {
+        "id" : "9",
+        "x" : 685,
+        "y" : 1225
+      }, {
+        "id" : "11",
+        "x" : 1270,
+        "y" : 835
+      }, {
+        "id" : "13",
+        "x" : 1915,
+        "y" : 390
+      }, {
+        "id" : "24",
+        "x" : 2590,
+        "y" : 345
+      }, {
+        "id" : "26",
+        "x" : 90,
+        "y" : 1760
+      }, {
+        "id" : "38",
+        "x" : 1260,
+        "y" : 1760
+      } ],
+      "externalBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Dynamic-004",
+      "order" : 10,
+      "relationships" : [ {
+        "description" : "User authenticates",
+        "id" : "51",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "Requests exam results",
+        "id" : "52",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 712,
+          "y" : 1754
+        } ]
+      }, {
+        "description" : "Assures the user is authanticated and has the rights",
+        "id" : "80",
+        "order" : "3",
+        "response" : false
+      }, {
+        "description" : "Translates the API request",
+        "id" : "74",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1285,
+          "y" : 1304
+        } ]
+      }, {
+        "description" : "Requests the exam result data",
+        "id" : "76",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1902,
+          "y" : 885
+        } ]
+      }, {
+        "description" : "Queries the Exam DB",
+        "id" : "77",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2487,
+          "y" : 667
+        } ]
+      }, {
+        "description" : "Retrieves the data from Exam DB",
+        "id" : "77",
+        "order" : "7",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2467,
+          "y" : 367
+        } ]
+      }, {
+        "description" : "Forwards the data",
+        "id" : "76",
+        "order" : "8",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1732,
+          "y" : 639
+        } ]
+      }, {
+        "description" : "Resolves the API request",
+        "id" : "74",
+        "order" : "9",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1119,
+          "y" : 1055
+        } ]
+      }, {
+        "description" : "Serializes and sends results",
+        "id" : "52",
+        "order" : "10",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 512,
+          "y" : 1530
+        } ]
+      } ],
+      "title" : "Viewing exam results"
+    }, {
+      "dimensions" : {
+        "height" : 2648,
+        "width" : 3380
+      },
+      "elementId" : "8",
+      "elements" : [ {
+        "id" : "9",
+        "x" : 740,
+        "y" : 1366
+      }, {
+        "id" : "10",
+        "x" : 1430,
+        "y" : 1366
+      }, {
+        "id" : "12",
+        "x" : 2155,
+        "y" : 1361
+      }, {
+        "id" : "13",
+        "x" : 2135,
+        "y" : 461
+      }, {
+        "id" : "24",
+        "x" : 2785,
+        "y" : 461
+      }, {
+        "id" : "26",
+        "x" : 145,
+        "y" : 1901
+      }, {
+        "id" : "37",
+        "x" : 2755,
+        "y" : 1926
+      }, {
+        "id" : "38",
+        "x" : 1315,
+        "y" : 1901
+      } ],
+      "externalBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Dynamic-005",
+      "order" : 11,
+      "relationships" : [ {
+        "description" : "User authenticates",
+        "id" : "51",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "Requests exam results",
+        "id" : "52",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 505,
+          "y" : 1651
+        } ]
+      }, {
+        "description" : "Assures the user is authanticated and has the rights",
+        "id" : "80",
+        "order" : "3",
+        "response" : false
+      }, {
+        "description" : "Translates the API request",
+        "id" : "73",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1305,
+          "y" : 1406
+        } ]
+      }, {
+        "description" : "Requests the modification of exam result",
+        "id" : "75",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1910,
+          "y" : 1051
+        } ]
+      }, {
+        "description" : "Modifies the exam results",
+        "id" : "77",
+        "order" : "6",
+        "response" : false
+      }, {
+        "description" : "HTTP 200 OK",
+        "id" : "75",
+        "order" : "7",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2060,
+          "y" : 1126
+        } ]
+      }, {
+        "description" : "Requests notification that exam result have beeen changed",
+        "id" : "78",
+        "order" : "8",
+        "response" : false
+      }, {
+        "description" : "Sends the notification",
+        "id" : "79",
+        "order" : "9",
+        "response" : false
+      }, {
+        "description" : "Confirms the transaction",
+        "id" : "73",
+        "order" : "10",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1300,
+          "y" : 1596
+        } ]
+      }, {
+        "description" : "Confirms the transaction to the user",
+        "id" : "52",
+        "order" : "11",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 855,
+          "y" : 1906
+        } ]
+      } ],
+      "title" : "Updating exam results"
+    }, {
+      "dimensions" : {
+        "height" : 2758,
+        "width" : 3383
+      },
+      "elementId" : "8",
+      "elements" : [ {
+        "id" : "9",
+        "x" : 1183,
+        "y" : 433
+      }, {
+        "id" : "10",
+        "x" : 433,
+        "y" : 1033
+      }, {
+        "id" : "11",
+        "x" : 1183,
+        "y" : 1033
+      }, {
+        "id" : "12",
+        "x" : 433,
+        "y" : 1633
+      }, {
+        "id" : "13",
+        "x" : 1945,
+        "y" : 1633
+      }, {
+        "id" : "24",
+        "x" : 1945,
+        "y" : 2233
+      }, {
+        "id" : "26",
+        "x" : 2708,
+        "y" : 433
+      }, {
+        "id" : "37",
+        "x" : 433,
+        "y" : 2233
+      }, {
+        "id" : "38",
+        "x" : 2708,
+        "y" : 1033
+      } ],
+      "externalBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Dynamic-006",
+      "order" : 12,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "description" : "User authenticates",
+        "id" : "51",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "Requests teacher's subjects",
+        "id" : "52",
+        "order" : "2",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2285,
+          "y" : 305
+        }, {
+          "x" : 2060,
+          "y" : 315
+        } ]
+      }, {
+        "description" : "Assures the user is authenticated and has the rights",
+        "id" : "80",
+        "order" : "3",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2165,
+          "y" : 1170
+        } ]
+      }, {
+        "description" : "Retrieves the list of teacher's subjects and students",
+        "id" : "74",
+        "order" : "4",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1355,
+          "y" : 935
+        } ]
+      }, {
+        "description" : "Queries data for teacher's subjects and students",
+        "id" : "76",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1710,
+          "y" : 1535
+        } ]
+      }, {
+        "description" : "Accesses subjects and students data",
+        "id" : "77",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1815,
+          "y" : 2090
+        } ]
+      }, {
+        "description" : "Returns subjects and students data",
+        "id" : "77",
+        "order" : "7",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2320,
+          "y" : 2083
+        } ]
+      }, {
+        "description" : "Returns subjects and students data",
+        "id" : "76",
+        "order" : "8",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1881,
+          "y" : 1365
+        } ]
+      }, {
+        "description" : "Resolves data retrieval",
+        "id" : "74",
+        "order" : "9",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1585,
+          "y" : 900
+        } ]
+      }, {
+        "description" : "Displays the list of subjects and students",
+        "id" : "52",
+        "order" : "10",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2050,
+          "y" : 480
+        }, {
+          "x" : 2285,
+          "y" : 480
+        } ]
+      }, {
+        "description" : "Requests to grant credit to selected students",
+        "id" : "52",
+        "order" : "11",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2285,
+          "y" : 625
+        }, {
+          "x" : 2040,
+          "y" : 630
+        } ]
+      }, {
+        "description" : "Processes the credit granting request",
+        "id" : "73",
+        "order" : "12",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 939,
+          "y" : 765
+        } ]
+      }, {
+        "description" : "Requests the update of credit status",
+        "id" : "75",
+        "order" : "13",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1390,
+          "y" : 1595
+        }, {
+          "x" : 1490,
+          "y" : 1650
+        } ]
+      }, {
+        "description" : "Modifies the credit data",
+        "id" : "77",
+        "order" : "14",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2030,
+          "y" : 2110
+        } ]
+      }, {
+        "description" : "Confirms the modification",
+        "id" : "77",
+        "order" : "15",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2565,
+          "y" : 2100
+        } ]
+      }, {
+        "description" : "Returns update confirmation",
+        "id" : "75",
+        "order" : "16",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1380,
+          "y" : 1820
+        }, {
+          "x" : 1300,
+          "y" : 1810
+        } ]
+      }, {
+        "description" : "Requests notification about credit status update",
+        "id" : "78",
+        "order" : "17",
+        "response" : false
+      }, {
+        "description" : "Sends notification to affected students",
+        "id" : "79",
+        "order" : "18",
+        "response" : false
+      }, {
+        "description" : "Confirms the update",
+        "id" : "73",
+        "order" : "19",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 1045,
+          "y" : 980
+        } ]
+      }, {
+        "description" : "Displays confirmation to the teacher",
+        "id" : "52",
+        "order" : "20",
+        "response" : true,
+        "vertices" : [ {
+          "x" : 2065,
+          "y" : 810
+        }, {
+          "x" : 2320,
+          "y" : 820
+        } ]
+      } ],
+      "title" : "Granting course credits"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 1900,
+        "width" : 3100
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 1325,
+        "y" : 799
+      }, {
+        "id" : "35",
+        "x" : 200,
+        "y" : 1399
+      }, {
+        "id" : "36",
+        "x" : 950,
+        "y" : 1399
+      }, {
+        "id" : "37",
+        "x" : 1700,
+        "y" : 1399
+      }, {
+        "id" : "38",
+        "x" : 2450,
+        "y" : 1399
+      }, {
+        "id" : "81",
+        "x" : 575,
+        "y" : 199
+      }, {
+        "id" : "82",
+        "x" : 1325,
+        "y" : 199
+      }, {
+        "id" : "83",
+        "x" : 2075,
+        "y" : 199
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "C1",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "41"
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "57"
+      }, {
+        "id" : "59"
+      }, {
+        "id" : "85"
+      }, {
+        "id" : "87"
+      }, {
+        "id" : "89"
+      } ],
+      "softwareSystemId" : "1"
+    } ]
+  }
+}

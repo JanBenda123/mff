@@ -1,0 +1,21 @@
+hazelcast:
+  network:
+    # Make sure we use a localhost address.
+    interfaces:
+      enabled: true
+      interfaces: [127.0.0.1]
+    # The first member is assigned address 127.0.0.1:5701.
+    # The following are assigned port 5702 and so on.
+    join:
+      multicast:
+        enabled: false
+      tcp-ip:
+        enabled: true
+        members: 127.0.0.1:5701
+  map:
+    DocumentCache:
+      eviction:
+        eviction-policy: LRU
+        max-size-policy: PER_NODE
+        size: 5
+      in-memory-format: BINARY
